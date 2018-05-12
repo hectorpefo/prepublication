@@ -44,11 +44,11 @@ So the chance that I have a buddy is:
 $$\int_{X = -\infty}^\infty O_XP_X$$
 
 $$ = \int_{X=-\infty}^\infty 
-\left[1-\left(1-2s\frac{1}{\sqrt{2\pi}} e^\frac{-X^2}{2}\right)^{N-1}\right] \frac{1}{\sqrt{2\pi}} e^{\frac{-X^2}{2} dX$$
+\left[1-\left(1-2s\frac{1}{\sqrt{2\pi}} e^\frac{-X^2}{2}\right)^{N-1}\right] \frac{1}{\sqrt{2\pi}} e^{\frac{-X^2}{2}} dX$$
 
 There's no hope of a closed-form solution, so we evaluate that integral numerically, for varying $s$ and $N$.
 
-!(/img/runningbuddies.PNG)
+![Graph of s versus N](/img/runningbuddies.PNG)
 
 ```python
 from math import exp,pi,sqrt

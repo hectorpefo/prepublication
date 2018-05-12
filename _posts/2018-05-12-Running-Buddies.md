@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Running Buddies
 date: 2018/05/12
 ---

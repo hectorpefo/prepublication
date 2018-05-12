@@ -7,11 +7,11 @@ date: 2018/05/12
 
 >Let’s say there are $N$ people going for a run, and assume that each person’s preferred running speed, call it $X_i$, is independent and normally distributed, with a mean of $\mu$ and a variance of $\sigma^2$. Or, mathematically,
 >
->$$X_i ∼ N(\mu,\sigma^2)$$
+>$$X_i ~ N(\mu,\sigma^2)$$
 >
->Now, for any given person, let’s assume that the person has a running buddy if there’s another person in the group whose preferred speed is about the same as theirs. Specifically, we’ll say that person $i$ and person $j$ can be running buddies if their preferred speeds are within some number $s$ of each other — that is, if $|X_i - X_j| \leq s$.
+>Now, for any given person, let’s assume that the person has a running buddy if there’s another person in the group whose preferred speed is about the same as theirs. Specifically, we’ll say that person $i$ and person $j$ can be running buddies if their preferred speeds are within some number $s$ of each other — that is, if $\|X_i - X_j\| \leq s$.
 >
->How large does $N$ need to be before the probability of each person having a running buddy is $99$ percent? (Assume \mu, \sigma^2 and $s$ are fixed.)
+>How large does $N$ need to be before the probability of each person having a running buddy is $99$ percent? (Assume $\mu$, $\sigma^2$ and $s$ are fixed.)
 
 <!--more-->
 

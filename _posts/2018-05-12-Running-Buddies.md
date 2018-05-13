@@ -37,7 +37,11 @@ $$O_X = 1 - (1 - B_X)^{N-1}$$
 
 The chance that my speed is between $X$ and $X + dX$ is  
 
-$$P_X = f(x)dX$$
+$$P_X = f(X)dX$$
+
+where $F$ is the probability density function for the standard normal distribution:
+
+$$f(X) = \frac{1}{\sqrt{2\pi}} e^{\frac{-X^2}{2}}$$
 
 So the chance that I have a buddy is:
 

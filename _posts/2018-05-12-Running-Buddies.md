@@ -25,9 +25,9 @@ The first is that runners actually get to run with buddies only if they are part
 
 The second ambiguity is in the quantifier "each." Are we looking for $99\%$ probability that all runners have buddies, or are we looking for a $99\%$ probability that a randomly selected runner has a buddy?  Either interpretation is possible semantically, but the choice of the phrase "each person" over "every person" and "all people" suggests that we are focusing on per-person probabilities, i.e., the latter interpretation, which is what we therefore will assume.
 
-Choose units so that $\mu$ is $0$ and $\sigma$ is $1$ (yes, this gives half of the runners negative speeds, but positive probability of negative values is inevitable with a normal distribution, and we can think of it as the speed relative to that of the average runner).  
+Choose units so that $\mu$ is $0$ and $\sigma$ is $1$ (true, this gives half of the runners negative speeds, but positive probability of negative values is inevitable with any normal distribution). Think of it as the speed relative to the average runner.  
 
-Let my speed be $X$. Then, the chance  $B_X$ that a given other runner is a buddy is the probability that their speed is between $X - s$ and $X + s$, which, where $\Phi$ is the cumulative distribution function for the standard normal distribution (which is our distribution of $X$), is:
+Let my speed be $X$. Then, the chance  $B_X$ that a given other runner is my buddy is the probability that their speed is between $X - s$ and $X + s$, which, where $\Phi$ is the cumulative distribution function for the standard normal distribution (which is the distribution of each $X_i$), is:
 
 $$B_X = \Phi(X+s) - \Phi(X-s)$$
 
@@ -39,7 +39,7 @@ The chance that my speed is between $X$ and $X + dX$ is
 
 $$P_X = f(X)dX$$
 
-where $F$ is the probability density function for the standard normal distribution:
+where $f$ is the probability density function for the standard normal distribution:
 
 $$f(X) = \frac{1}{\sqrt{2\pi}} e^{\frac{-X^2}{2}}$$
 
@@ -50,9 +50,13 @@ $$\int_{X = -\infty}^\infty O_XP_X$$
 $$ = \int_{X=-\infty}^\infty 
 \left[1 - (1 - (\Phi(X+s) - \Phi(X-s))^{N-1}\right] \frac{1}{\sqrt{2\pi}} e^{\frac{-X^2}{2}} dX$$
 
-There's no hope of a closed-form solution, so we evaluate that integral numerically, for varying $s$ and $N$.
+There's no hope of a closed-form solution to the integral, so we evaluate it numerically, for various $s$ and $N$ so as to identify, for each value of $s$ we examine, the least $N$ for which the integral matches or exceeds $.99$.  The results are charted below. They can be read in a general way, as identifying how many runners are needed for a randomly selected runner to have a $.99$ chance of there being another runner within $s$ standard deviations of their speed.
 
 ![Graph of s versus N](/img/runningbuddies.PNG)
+
+![Graph of s versus N](/img/runningbuddies2.PNG)
+
+### Code (Python): 
 
 ```python
 from math import exp,pi,sqrt,erf,ceil,log
@@ -80,8 +84,9 @@ def buddyProb():
 	return integrate(LOW_INT_LIMIT,HIGH_INT_LIMIT,buddyPDF,INT_STEP)
 
 CONFIDENCE = .99
+START_S = .5
 STEPS_FOR_S = .01
-LIMIT_FOR_S = .5
+LIMIT_FOR_S = 1.0
 LOW_INT_LIMIT = -100
 HIGH_INT_LIMIT = 100
 INT_STEP = .001

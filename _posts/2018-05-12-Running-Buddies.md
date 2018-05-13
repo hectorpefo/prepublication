@@ -51,7 +51,7 @@ There's no hope of a closed-form solution, so we evaluate that integral numerica
 ![Graph of s versus N](/img/runningbuddies.PNG)
 
 ```python
-from math import exp,pi,sqrt,erf
+from math import exp,pi,sqrt,erf,ceil,log
 
 def integrate(lowLimit,highLimit,function,step):
 	accum = 0
@@ -65,15 +65,14 @@ def phi(x):
     #'Cumulative distribution function for the standard normal distribution'
     return (1.0 + erf(x / sqrt(2.0))) / 2.0
 
-def normalPDF(x):
-	return (1/sqrt(2*pi)) * exp(-x**2/2)
+def normalPDF(x,mu,sigma):
+	return (1 / sqrt(2*pi*sigma**2)) * exp(-(x-mu)**2 / (2.0*sigma**2))
 
 def buddyPDF(x):
 	global s, N
-	pdfx = normalPDF(x)
-	return (1 - (1 - (phi(x+s)-phi(x-s)))**(N-1)) * pdfx
+	return (1 - (1 - (phi(x + s) - phi(x - s))) ** (N-1)) * normalPDF(x,0,1)
 
-def buddyProb(s,N):
+def buddyProb():
 	return integrate(LOW_INT_LIMIT,HIGH_INT_LIMIT,buddyPDF,INT_STEP)
 
 CONFIDENCE = .99
@@ -81,13 +80,13 @@ STEPS_FOR_S = .01
 LIMIT_FOR_S = .5
 LOW_INT_LIMIT = -100
 HIGH_INT_LIMIT = 100
-INT_STEP = .01
+INT_STEP = .001
 
 s = STEPS_FOR_S
 while s <= LIMIT_FOR_S:
 	N = 1
 	while True:
-		prob = buddyProb(s,N)
+		prob = buddyProb()
 		if prob >= CONFIDENCE:
 			print s,',',N
 			break
@@ -96,6 +95,8 @@ while s <= LIMIT_FOR_S:
 	s += STEPS_FOR_S
 ```
 <br>
+
+
 
 
 

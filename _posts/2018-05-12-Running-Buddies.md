@@ -84,20 +84,23 @@ def buddyProb():
 	return integrate(LOW_INT_LIMIT,HIGH_INT_LIMIT,buddyPDF,INT_STEP)
 
 CONFIDENCE = .99
-START_S = .5
-STEPS_FOR_S = .01
-LIMIT_FOR_S = 1.0
+LOW_S = 1.0
+STEPS_FOR_S = -.01
+HIGH_S = .01
 LOW_INT_LIMIT = -100
 HIGH_INT_LIMIT = 100
 INT_STEP = .001
 
-s = STEPS_FOR_S
-while s <= LIMIT_FOR_S:
-	N = 1
+Ns = {}
+s = HIGH_S
+lastN = 1
+while s >= LOW_S:
+	N = lastN
 	while True:
 		prob = buddyProb()
 		if prob >= CONFIDENCE:
-			print s,',',N
+			Ns[s] = N
+			lastN = N
 			break
 		else:
 			N += 1

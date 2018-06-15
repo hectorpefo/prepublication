@@ -33,5 +33,12 @@ $$E(n+1) = (2n+1) + E(n) = n^2 + 2n +1 = (n+1)^2$$
 
 So with $10$ pairs of cards, we expect to take $100$ turns, or $200$ seconds, to finish.
 
+We relied on the fact that the expected number of probabilistically-independent turns it will take to succeed, where each turn has a $1/k$ chance of success, is $k$.  Had we not already known that, we could have proved it as follows.  Before a given turn, there is a $1/k$ chance that we will succeed in $1$ turn, and a $1-1/k$ chance that we won't, and so after that $1$ turn be right back where we started, expecting just as many more turns as we expected initially.  That is:
+
+$$ E = \frac{1}{k} \cdot 1 + (1-\frac{1}{k})(1 + E) $$
+
+Solving this, we find that,
+
+$$ E = k $$
 
 <br>

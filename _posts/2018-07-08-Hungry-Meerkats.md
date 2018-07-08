@@ -71,6 +71,8 @@ The Wikipedia page on [Lotka-Volterra Systems](https://en.wikipedia.org/wiki/Lot
 
 Numerically (code below), we find that starting with $(10,100)$ and adjusting the (real) numbers of predators and prey according to the differential equations as nearly continuously as we can, we trace a full circuit every $13.45$ months, reaching a maximum of $26.90$ predators.  However, the number of predators dips below $1$ each cycle before recovering, so if we don't want to allow regenerating, proper parts of meerkats into our model's ontology, it may be best to think of this as counting population by thousands, millions, or the like.
 
+![Graph of predators vs. prey closed curve that includes (10,100).](/img/PredatorsAndPrey.PNG)
+
 ### Code (Python):
 
 ```python

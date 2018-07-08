@@ -105,10 +105,8 @@ while True:
 		if abs(prey-START[0]) < .0001 and abs(predators-START[1]) < .0001:
 			break
 
-for point in plotPoints:
-	print point[0],",",point[1]
 print "Max predators is",maxPredators,"and period is",1.0*time/STEPSPERMONTH,"months"
-print len(plotPoints)
+
 ```
 
 <br>

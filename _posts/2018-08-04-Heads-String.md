@@ -11,7 +11,7 @@ published: True
 >
 >What are my chances of winning this game? (A computer program could calculate the probability to any degree of precision, but is there a more elegant mathematical expression for the probability of winning?)
 
-<--more-->
+<!--more-->
 
 ## Solution
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 08/04/2018
+date: 2018/08/04
 title: Heads String
 published: True
 ---

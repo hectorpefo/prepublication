@@ -18,3 +18,5 @@ published: True
 You lose if you fail throw a heads ($\frac{1}{2}$ chance of that), then fail to throw two heads in a row ($1-\frac{1}{4}$ chance of that), then fail to throw three heads in a row ($1-\frac{1}{8}$ chance of that), and so on. The chance of victory is one minus that of losing, and so it is:
 
 $$1 - \prod_{i=1}^\infty (1-\frac{1}{2^i}) \approx .7112$$
+
+<br>

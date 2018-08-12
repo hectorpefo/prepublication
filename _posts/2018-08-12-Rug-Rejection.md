@@ -22,15 +22,9 @@ The expected number of monochromatic 4-by-4 squares in a given 4-by-4 block in a
 
 One way of reading the second question is, for what number of colors does a million times this expectation round to zero (i.e., dip below $.5$)? The answer to that is five colors, where the total expectation is $.308$ monochromatic regions.
 
-To address the first question, we know that the expected number of total monochrome blocks in a million rugs is $1000000 \times 9409/3^{15}$, or about $655.7$. If we assume that there are very few rugs with more than one block per rug, that would be about $.06557$ percent of the rugs.  How realistic is that assumption? There are two sources of error we can examine.
+To address the first question, we know that the expected number of total monochrome blocks in a million rugs is $1000000 \times 9409/3^{15}$, or about $655.7$. If we assume that there are very few rugs with more than one block per rug, that would be about $.06557$ percent of the rugs.  How realistic is that assumption? 
 
-First, under the idealization that the $655.7$ blocks are randomly assigned to rugs (which we'll see is not accurate), consider a given rug with a given block. How likely is it that it will contain additional blocks? It will contain no other blocks just in case for each of the $654.7$ other blocks, one of the other $999999$ rugs contains it.  Thus the chance that our rug has additional blocks is:
-
-$$ 1 - (999999/1000000)^{654.7} \approx 0.0006545$$
-
-So the expected number of rugs with multiple blocks would be $655.7$ times that, or $.4221$ rugs.  That means that our $655.7$ expected blocks are on $655.3$ expected blocky rugs, and so the probability of a rug being blocky is $.06553$ percent, which is not far from the initial estimate.
-
-But, second, that idealization underestimates the number of multiply-blocked rugs, because a rug with a block on it is significantly more likely to have a second block than an arbitrary rug is to have at least one block.  Take a given block on a given rug, and suppose it's not along one of the edges.  Then there are four ways to create additional blocks by coloring four neighboring squares. Each of these ways has probability $1/81$, for a total probability of $1-(80/81)^4$, or about $.04848$ of there being an additional block. So we might estimate that $.02424$ of the blocked rugs have two such overlapping blocks. And of course there's a small chance that there is also a non-overlapping block, and a third such block, so we might estimate that there are $1.025$ blocks per blocked rug. 
+Not very. That idealization misses a not insignificant number of multiply-blocked rugs, because a rug with a block on it is significantly more likely to have a second block than an arbitrary rug is to have at least one block.  Take a given block on a given rug, and suppose it's not along one of the edges.  Then there are four ways to create additional blocks by coloring four neighboring squares. Each of these ways has probability $1/81$, for a total probability of $1-(80/81)^4$, or about $.04848$ of there being an additional block. So we might estimate that $.02424$ of the blocked rugs have two such overlapping blocks. And of course there's a small chance that there is also a non-overlapping block, and a third such block, so we might estimate that there are $1.025$ blocks per blocked rug. 
 
 Thus, where our expected $655.7$ blocks are on $n$ expected rugs, we have:
 

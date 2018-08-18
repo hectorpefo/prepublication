@@ -36,18 +36,15 @@ So Ariel will in fact choose 5, Beatrice 9, and Cassandra a number greater than 
 
 ```python
 MAX_DOLLARS = 10
-PLAYERS = 3
+PLAYERS = 7
 CLOCK = False
-STEPS_PER_NUMBER = 1
 
-# Return the distance between two numbers 
-
+# Return the distance between two numbers around a clock
 def clockDistance(a,b):
 	global MAX_DOLLARS
 	return min(abs(a - b), abs(a + MAX_DOLLARS - b), abs(b + MAX_DOLLARS - a)) 
 
 # Return a list of player payoffs for a complete game state
-
 def getPayoffs(state):
 	global PLAYERS, CLOCK
 	payoffs = [0] * PLAYERS
@@ -68,57 +65,41 @@ def getPayoffs(state):
 			payoffs[player] += number*1.0/len(nearestPlayers)
 	return payoffs
 
-# Return the value of the last play in state, assuming optimal play 
-# going forward.
-
-def evaluateLastPlay(state):
-	global PLAYERS
-	if len(state) == PLAYERS:
-		return getPayoffs(state)[PLAYERS-1]
-	else:
-		newState = list(state)
-		while len(newState) < PLAYERS:
-			newState += [getBestMove(newState)[0]]
-		return getPayoffs(newState)[len(state) - 1]
-
 # For a game state (a list of moves), return a tuple containing the best 
-# move for the next player given optimal play going forward together with
-# the payoff for that move.
-
-def getBestMove(state):
+# complete game state given optimal play going forward together with
+# a tuple containing the payoffs for that game.
+def getOptimalCompletion(state):
 	global ties, PLAYERS
 	bestMove = 0
 	bestValue = 0
 	tie = False
-	for i in range(1, MAX_DOLLARS * STEPS_PER_NUMBER + 1):
-		move = 1.0 * i / STEPS_PER_NUMBER
+	if len(state) == PLAYERS:
+		return (state, getPayoffs(state))
+	for move in range(1, MAX_DOLLARS + 1):
 		if move in state:
 			continue
 		newState = list(state + [move])
-		newValue = evaluateLastPlay(newState)
+		newCompletion, newPayoffs = getOptimalCompletion(newState)
+		newValue = newPayoffs[len(newState) - 1]
 		if newValue == bestValue:
 			tie = True
 		elif newValue > bestValue:
 			bestValue = newValue
-			bestMove = move
+			bestCompletion = newCompletion
+			bestPayoffs = newPayoffs
 			tie = False
 	if tie:
 		ties += [list(state)]
-	return (bestMove,bestValue)
+	return (bestCompletion, bestPayoffs)
 
 # Find the optimally-played game, and note any "ties" where multiple moves are optimal.
-
 ties = []
-optimalGame = []
-optimalValues = []
-while len(optimalGame) < PLAYERS:
-	move, value = getBestMove(optimalGame)
-	optimalGame += [move]
-	optimalValues += [value]
-	if optimalGame in ties:
-		print("Tie at",optimalGame)
+optimalGame = getOptimalCompletion([])
+print("An optimal game is", optimalGame)
+for i in range(len(optimalGame[0])):
+	if optimalGame[0][:i] in ties:
+		print('Tie at', optimalGame[0][:i])
 
-print(optimalGame,optimalValues)
 ```
 
 <br>

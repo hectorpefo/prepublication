@@ -15,9 +15,9 @@ date: 9/11/2018
 
 ## Solution
 
-The key will be to show that there can be at most three grandfathers.  It will follow that the minimum number of grandchildren had by the grandfather with the most grandchildren in the class is $\lceil \frac{40}{3} \rceil$, which is $14$.
+The key will be to show that there can be at most three grandfathers.  It will follow, given that there are $40$ grandfatherings by $3$ grandfathers, that the minimum number of grandchildren had by the grandfather with the most grandchildren in the class is $\lceil \frac{40}{3} \rceil$, that is, the least integer greater than or equal to a third of forty, which is $14$.
 
-Suppose there are four grandfathers, $a$, $b$, $c$, and $d$. Between them, there are six combinations, which we can write alphabetically as $ab$, $ac$, $ad$, $bc$, $bd$, and $cd. Notice that if the combination $ab$ is witnessed by a grandchild, then the combination $cd$ cannot be (for then two kids would not share a grandfather).  Similar reasoning establishes that at least one combination in each of these three pairs (which exhaust the combinations) must go unwitnessed:
+Suppose there are four grandfathers, $a$, $b$, $c$, and $d$. Between them, there are six combinations, which we can write alphabetically as $ab$, $ac$, $ad$, $bc$, $bd$, and $cd$. Notice that if the combination $ab$ is witnessed by a grandchild, then the combination $cd$ cannot be (for then two kids would not share a grandfather).  Similar reasoning establishes that at least one combination in each of these three pairs (which exhaust the combinations) must go unwitnessed:
 
 $$(ab,cd), (ac,bd), (ad,bc)$$
 

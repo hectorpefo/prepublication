@@ -5,11 +5,11 @@ title: Map Colors
 date: 2018/09/15
 ---
 
->An eccentric billionaire has a published a devilish math problem that she wants to see solved. Her challenge is to three-color a specific map that she likes — that is, to color its regions with only three colors while ensuring that no bordering regions are the same color. Being an eccentric billionaire, she offers $10 million to anyone who can present her with a solution.
+>An eccentric billionaire has a published a devilish math problem that she wants to see solved. Her challenge is to three-color a specific map that she likes — that is, to color its regions with only three colors while ensuring that no bordering regions are the same color. Being an eccentric billionaire, she offers 10 million dollars to anyone who can present her with a solution.
 >
->You come up with a solution to this math problem! However, being a poor college student, you cannot come up with the $10,000 needed to travel to the billionaire’s remote island lair. You go to your local bank and ask the manager to lend you the $10,000. You explain to him that you will soon be winning $10 million, so you will easily be able to pay back the loan. But the manager is skeptical that you actually have a correct solution.
+>You come up with a solution to this math problem! However, being a poor college student, you cannot come up with the 10,000 dollars needed to travel to the billionaire’s remote island lair. You go to your local bank and ask the manager to lend you the 10,000 dollars. You explain to him that you will soon be winning 10 million dollars, so you will easily be able to pay back the loan. But the manager is skeptical that you actually have a correct solution.
 >
->Of course, if you simply hand the manager your solution, there is nothing preventing him from throwing you out of his office and collecting the $10 million for himself. So, the question is: How do you prove to the manager that you have a solution to the problem without giving him the solution (or any part of the solution that makes it easy for him to reproduce it)?
+>Of course, if you simply hand the manager your solution, there is nothing preventing him from throwing you out of his office and collecting the 10 million for himself. So, the question is: How do you prove to the manager that you have a solution to the problem without giving him the solution (or any part of the solution that makes it easy for him to reproduce it)?
 
 <!--more-->
 

@@ -13,7 +13,7 @@ date: 2018/09/15
 
 <!--more-->
 
-([fivethirtyeight](https://fivethirtyeight.com/features/to-solve-the-eccentric-billionaires-puzzle-you-must-first-defeat-the-banker/)))
+([fivethirtyeight](https://fivethirtyeight.com/features/to-solve-the-eccentric-billionaires-puzzle-you-must-first-defeat-the-banker/))
 
 ## Solution
 

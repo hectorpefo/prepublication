@@ -23,7 +23,7 @@ You produce a stack of six colored maps, each one a variation on your solution, 
 
 You bring these to the banker.  He chooses a map and indicates any adjacent regions he likes, and you scratch off the material to reveal the colors of those regions, showing that they are distinct.  You then recoat that map, shuffle the maps, and repeat the same challenge-and-reveal procedure until the banker is sufficiently confident that all adjacent regions on all of the maps in your stack are differently colored.  That (eventually) convinces him that each of your six colorings is a correct solution, and that in the six colorings, each pair of adjacent regions is differently colored in all six possible ways; but he can conclude nothing more specific about the colorings.
 
-To produce full confidence, we can give the banker a machine that (as he knows) scans a map and determines whether it is three-colored, saving no memory of the colors on the map, but displaying the black-and-white skeleton.
+To produce full confidence, we can give the banker a machine that (as he knows) scans a map and determines whether it is three-colored, saving no memory of the colors on the map, but displaying the uncolored skeleton.
 
 ![Computer screen displaying an uncolored map and the text, "3-Colored!"](/img/map.png)
 

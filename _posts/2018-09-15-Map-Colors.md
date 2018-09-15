@@ -25,6 +25,8 @@ You bring these to the banker.  He chooses a map and indicates any adjacent regi
 
 To produce full confidence, we can give the banker a machine that (as he knows) scans a map and determines whether it is three-colored, saving no memory of the colors on the map, but displaying the black-and-white skeleton.
 
+![Computer screen displaying an uncolored map and the text, "3-Colored!"](/img/map.png)
+
 The three-color mapping problem is [NP-complete](https://en.wikipedia.org/wiki/NP-completeness), meaning that every yes/no problem in the [NP complexity class](https://en.wikipedia.org/wiki/NP_(complexity)) can be reduced to it: for any such problem, there is an efficient way of translating it into a map such that the answer to that problem is yes if and only if the map can be three-colored. So for any such problem, you can convince a banker that you have a solution to it by first agreeing with the banker on a translation of the problem to a map, and then convincing him that you have three-colored that map.  A proof that one knows a solution to a given problem, where the proof reveals nothing more about the solution, is called a [zero-knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof).
 
 <br>

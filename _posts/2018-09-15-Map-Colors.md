@@ -15,6 +15,6 @@ date: 2018/09/21
 
 ## Solution
 
-We'll go strait to the extra credit.  You have to walk $M+N$ blocks in total, and of those $M+N$ blocks you must choose $M$ blocks to travel east-west. There are ${M+N} \choose M$ ways to do this, and so it will take half that many days to walk all of the paths.
+We'll go straight to the extra credit.  You have to walk $M+N$ blocks in total, and of those $M+N$ blocks you must choose $M$ blocks to travel east-west. There are ${M+N} \choose M$ ways to do this, and so it will take half that many days to walk all of the paths.
 
 <br>

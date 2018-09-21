@@ -17,6 +17,6 @@ date: 2018/09/21
 
 We'll go straight to the extra credit.  You have to walk $M+N$ blocks in total, and of those $M+N$ blocks you must choose $M$ blocks to travel east-west. There are ${M+N} \choose M$ ways to do this, and so it will take half that many days to walk all of the paths.
 
-If $M$ and $N$ are $5$ and $10$, you'll walk the final path on day $1502$.
+If $M$ and $N$ are $5$ and $10$, you'll walk the final path on the morning of day $1502$.
 
 <br>

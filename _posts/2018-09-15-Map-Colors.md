@@ -1,38 +1,20 @@
 ---
 layout: post
 published: true
-title: Map Colors
-date: 2018/09/15
+title: Street Grid
+date: 2018/09/21
 ---
 
->An eccentric billionaire has a published a devilish math problem that she wants to see solved. Her challenge is to three-color a specific map that she likes — that is, to color its regions with only three colors while ensuring that no bordering regions are the same color. Being an eccentric billionaire, she offers 10 million dollars to anyone who can present her with a solution.
+>You’ve just been hired to work in a juicy middle-management role at Riddler HQ — welcome aboard! We relocated you to a tastefully appointed apartment in Riddler City, five blocks west and 10 blocks south of the office. (The streets of Riddler City, of course, are laid out in a perfect grid.) You walk to work each morning and back home each evening. Restless and inquisitive mathematician that you are, you prefer to walk a different path along the streets each time. How long can you stay in that apartment before you are forced to walk the same path twice? (Assume you don’t take paths that are longer than required, and assume beaucoup bonus points for not using your computer.)
 >
->You come up with a solution to this math problem! However, being a poor college student, you cannot come up with the 10,000 dollars needed to travel to the billionaire’s remote island lair. You go to your local bank and ask the manager to lend you the 10,000 dollars. You explain to him that you will soon be winning 10 million dollars, so you will easily be able to pay back the loan. But the manager is skeptical that you actually have a correct solution.
->
->Of course, if you simply hand the manager your solution, there is nothing preventing him from throwing you out of his office and collecting the 10 million for himself. So, the question is: How do you prove to the manager that you have a solution to the problem without giving him the solution (or any part of the solution that makes it easy for him to reproduce it)?
+>Extra credit: What if you instead took a bigger but more distant apartment, M blocks west and N blocks south of the office?
 
 <!--more-->
 
-([fivethirtyeight](https://fivethirtyeight.com/features/to-solve-the-eccentric-billionaires-puzzle-you-must-first-defeat-the-banker/))
+([fivethirtyeight](https://fivethirtyeight.com/features/two-paths-diverged-in-a-city-and-i-i-took-the-block-less-traveled-by/))
 
 ## Solution
 
-### Producing high confidence
-
-We will show that the banker can reach arbitrarily high confidence that you have a correct solution, without learning anything else about the pattern of your map coloring.
-
-You produce a stack of six colored maps, each one a variation on your solution, with the three colors permuted in the six possible ways. The colored regions, but not the border lines, are then painted with an opaque scratch-off coating.
-
-You bring these to the banker.  He chooses a map and indicates any adjacent regions he likes, and you scratch off the material to reveal the colors of those regions, showing that they are distinct.  You then recoat that map, shuffle the maps, and repeat the same challenge-and-reveal procedure until the banker is sufficiently confident that all adjacent regions on all of the maps in your stack are differently colored.  That makes him sufficiently confident that each of your six colorings is a correct solution, and that in the six colorings, each pair of adjacent regions is differently colored in all six possible ways; but he can conclude nothing more specific about the colorings.
-
-### Producing full confidence
-
-To produce full confidence, we can give the banker a machine that (as he knows) scans a map and determines whether it is three-colored, saving no memory of the colors on the map, but displaying the uncolored skeleton.
-
-![Computer screen displaying an uncolored map and the text, "3-Colored!"](/img/map.png)
-
-### Extra credit
-
-The three-color mapping problem is [NP-complete](https://en.wikipedia.org/wiki/NP-completeness), meaning that every yes/no problem in the [NP complexity class](https://en.wikipedia.org/wiki/NP_(complexity)) can be reduced to it: for any such problem, there is an efficient way of translating it into a map such that the answer to that problem is yes if and only if the map can be three-colored. So for any such problem, you can convince a banker that you have a solution to it by first agreeing with the banker on a translation of the problem to a map, and then convincing him that you have three-colored that map.  A proof that one knows a solution to a given problem, where the proof reveals nothing more about the solution, is called a [zero-knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof).
+We'll go strait to the extra credit.  You have to walk $M+N$ blocks in total, and of those $M+N$ blocks you must choose $M$ blocks to travel east-west. There are ${M+N} \choose M$ ways to do this, and so it will take half that many days to walk all of the paths.
 
 <br>

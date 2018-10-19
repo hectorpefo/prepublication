@@ -21,6 +21,6 @@ $$E(N+1) = E(N) + p(1-p)$$
 
 Since we know that $E(1) = 1-p$, it follows that:
 
-$E(N) = (1-p) + (N-1)p(1-p)$$
+$$E(N) = (1-p) + (N-1)p(1-p)$$
 
 <br>

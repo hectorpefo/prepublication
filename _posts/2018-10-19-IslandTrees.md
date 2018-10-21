@@ -21,10 +21,10 @@ $$E(N+1) = E(N) + p(1-p)$$
 
 Since we know that $E(1) = 1-p$, it follows that:
 
-$E(N) = (1-p) + (N-1)p(1-p)$$
+$$E(N) = (1-p) + (N-1)p(1-p)$$
 
 This is maximized when its derivative is zero, namely, when:
 
-$$p = \frac{N-2}{2(N-1)}
+$$p = \frac{N-2}{2(N-1)}$$
 
 <br>

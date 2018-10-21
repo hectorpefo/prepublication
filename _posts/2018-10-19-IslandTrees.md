@@ -13,14 +13,14 @@ date: 2018/10/19
 
 ## Solution
 
-We will derive $E(N)$, the expected number of remaining communities, inductively, and prove at the same time that it is indeed (as the problem statement presupposes) independent of the particular configuration of the bridges.  This is obvious for $N=1$, where there is only one configuration, and $E(1)$ is simply $1-p$.  
+We will derive $E(N)$, the expected number of remaining trees, inductively, and prove at the same time that it is indeed (as the problem statement presupposes) independent of the particular configuration of the bridges.  This is obvious for $N=1$, where there is only one configuration, and $E(1)$ is simply $1-p$.  
 
-Suppose that configuration-independence holds for some arbitrary $N$ for which we know $E(N)$, and consider any tree of $N+1$ islands.  Take a particular "leaf" island (one with only one bridge), and call it $I$.  We know that the expected number of communities left if we ignore $I$ is $E(N)$. Whether the existence of island $I$ affects the number of remaining communities depends on whether the island $J$, to which it is bridged, is destroyed. If $J$ is not destroyed, the number of communities is no different than if $I$ were out of the mix, whether or not $I$ is destroyed. If $J$ is destroyed, and there's a $p$ chance of that, then there is a single additional community ($I$ itself) if $I$ is not destroyed, and there's a $1-p$ chance of that.  So:
+Suppose that configuration-independence holds for some arbitrary $N$ for which we know $E(N)$, and consider any tree of $N+1$ islands.  Take a particular "leaf" island (one with only one bridge), and call it $I$.  We know that the expected number of trees left if we ignore $I$ is $E(N)$. Whether the existence of island $I$ affects the number of remaining trees depends on whether the island $J$, to which it is bridged, is destroyed. If $J$ is not destroyed, the number of trees is no different than if $I$ were out of the mix, whether or not $I$ is destroyed. If $J$ is destroyed, and there's a $p$ chance of that, then there is a single additional tree ($I$ itself) if $I$ is not destroyed, and there's a $1-p$ chance of that.  So:
 
 $$E(N+1) = E(N) + p(1-p)$$
 
 Since we know that $E(1) = 1-p$, it follows that:
 
-$$E(N) = (1-p) + (N-1)p(1-p)$$
+$E(N) = (1-p) + (N-1)p(1-p)$$
 
 <br>

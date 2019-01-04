@@ -21,7 +21,7 @@ Coming as it does from math professer Jordan Ellenberg, this puzzle may well hav
 Inspection reveals a few interesting features of the pattern: 
 - The zeroth row and column are all blue.
 - Apart from $(0,0)$, the pixels on the $x=y$ diagonal are all red.
-- Each row (and each column) exhibits a repeating pattern: the pattern up to but not including the diagonal is followed by its inverse (the colors are switched), after which the original pattern and inverse are repeated, and so on (I confess that I haven't checked all rows and columns for this but it seems to be true).
+- Each row (and each column), apart from the zeroth, exhibits a repeating pattern: the pattern up to but not including the diagonal is followed by its inverse (the colors are switched), after which the original pattern and inverse are repeated, and so on (I confess that I did not take the trouble to check all of the rows and columns for this, but it seems to be true).
 
 It turns out that these features uniquely determine the entire pattern.  Let's see how. We'll work in a spreadsheet where $(0,0)$ is at the top-left and where blue and red are replaced by $0$ and $1$.  Start by filling in the edges and diagonal.
 
@@ -35,7 +35,7 @@ Now we see that the initial pattern for column $2$ is complete: it is $0,0$. So 
 
 ![Row and column 2 complete](/img/3.PNG)
 
-You get the idea: this can be repeated for every row and column, to determine the value of every pixel in the grid.
+You get the idea: this can be repeated for every row and column, to determine the value of every pixel in the grid. When we've completed the $n$th row and column, we have all of the $n+1$st row and column up to the diagonal; so we know its base pattern, which we complete with its inverse and finish the row and column by repeating the base and inverse patterns.
 
 ![Grid complete](/img/4.PNG)
 

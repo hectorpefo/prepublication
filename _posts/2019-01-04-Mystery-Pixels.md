@@ -1,62 +1,42 @@
 ---
 layout: post
 published: true
-title: Ball Cups
-date: 2018/11/16
+title: Mystery Pixels
+date: 2019/01/04
 ---
 
->You’re going to play a game. Like many probability games, this one involves an infinite supply of ping-pong balls. No, this game is not quite beer pong.
->
->The balls are numbered 1 through N. There is also a group of N cups, labeled 1 through N, each of which can hold an unlimited number of ping-pong balls. The game is played in rounds. A round is composed of two phases: throwing and pruning.
->
->During the throwing phase, the player takes balls randomly, one at a time, from the infinite supply and tosses them at the cups. The throwing phase is over when every cup contains at least one ping-pong ball.
-Next comes the pruning phase. During this phase the player goes through all the balls in each cup and removes any ball whose number does not match the containing cup.
-Every ball drawn has a uniformly random number, every ball lands in a uniformly random cup, and every throw lands in some cup. The game is over when, after a round is completed, there are no empty cups.
->
->How many rounds would you expect to need to play to finish this game? How many balls would you expect to need to draw and throw to finish this game?
+>What are these bits?
 
 <!--more-->
 
-([fivethirtyeight](https://fivethirtyeight.com/features/the-riddler-just-had-to-go-and-reinvent-beer-pong/))
+([fivethirtyeight](https://fivethirtyeight.com/features/what-the-heck-are-these-dang-bits/))
+
+![Pixelized square image.](/img/ellenberg.png)
 
 
 ## Solution
 
-This is best broken down into two problems:
-- How many tosses are expected before each cup has been "retired" -- filled for the first time with a ball of the same number?
-- How many tosses are expected per round?
+Coming as it does from math professer Jordan Ellenberg, this puzzle may well have a slicker solution/explanation than this, but here's what I have.
 
-### Expected total tosses
+Inspection reveals a few interesting features of the pattern: 
+- The zeroth row and column are all blue.
+- Apart from $(0,0)$, the pixels on the $x=y$ diagonal are all red.
+- Each row (and each column) exhibits a repeating pattern: the pattern up to but not including the diagonal is followed by its inverse (the colors are switched), after which the original pattern and inverse are repeated, and so on.
 
-When $R$ cups have already been retired (for each $R$ from $0$ to $N-1$), the chance that a new ball will land in a matching, unretired cup is the chance, $(N-R)/N$, that we draw a ball matching an unretired cup, times the chance, $1/N$, that the ball lands in its matching cup.  So the chance that we retire a cup throwing a ball with $R$ cups already retired is $(N-R)/N^2$, and the total expected number of tosses is: 
+It turns out that these features uniquely determine the entire pattern.  Let's see how. We'll work in a spreadsheet where $(0,0)$ is at the top-left and where blue and red are replaced by $0$ and $1$.  Start by filling in the edges and diagonal:
 
-$$\sum_{R=0}^{N-1} \frac{N^2}{N-R} = N^2 \sum_{i=1}^N \frac{1}{i} = N^2H_N$$
+![Edges and diagonal](/img/1.PNG)
 
-where $H_N$ is the $N$th [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number).  This is a [coupon collector problem](https://en.wikipedia.org/wiki/Coupon_collector%27s_problem).
+Looking at column $1$, we see that it's initial pattern, up to but not including the diagonal, is already complete: it is simply $0$. Its inverse is also already complete: it's the $1$ at $(1,1)$.  So we repeat the pattern $0,1$ through the rest of column $1$, and we do the same for row $1$:
 
-### Expected tosses to retire j cups
+![Row and column 1 complete](/img/2.PNG)
 
-The number of tosses expected to retire j cups can be expressed similarly:
+Now we see that the initial pattern for column $2$ is complete: it is $0,0$. So we continue with its inverse, namely $1,1$ and then repeat the pattern $0,0,1,1$ throughout the column.
 
-$$T_j = \sum_{R=0}^{j-1} \frac{N^2}{N-R} = N^2 \sum_{i=N-j+1}^N \frac{1}{i} = N^2(H_N - H_{N-j+1})$$
+![Row and column 2 complete](/img/3.PNG)
 
+You get the idea: this can be repeated for every row and column, to determine the value of every pixel in the grid.
 
-### Expected tosses per round
-
-A cup is "visited" in a round if a ball lands in it.
-
-If $R$ cups have been retired before the start of the round, and $V$ of the $N-R$ unretired cups have been visited in it so far, the probability that a new, unretired cup is visited on a given toss is $(N-R-V)/N$, and so the expected number of tosses in the round is:
-
-$$ \sum_{V=0}^{N-R-1} \frac{N}{N-R-V} = N \sum_{M=1}^{N-R} \frac{1}{M} = N(H_{N-R})$$
-
-Let $E_i$ be the expected number of tosses in round $i$, and let $R_i$ be the expected number of cups retired by the end of round $i$ (let $R_0$ be $0$).  Then:
-
-$$E_i = NH_{N-R_{i-1}}$$ 
-
-The value $R_i$ is the greatest integer $j$ such that $T_j$ is less than or equal to $E_i$.
-
-Therefore $E_1$ is $NH_N$.
-
-
+![Grid complete](/img/4.PNG)
 
 <br>

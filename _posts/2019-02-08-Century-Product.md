@@ -1,8 +1,8 @@
 ---
 layout: post
 published: true
-title: Mystery Pixels
-date: 2019/01/04
+title: Century Product
+date: 2019/02/08
 ---
 
 >Given any three random integers — X, Y and Z — what are the chances that their product is divisible by 100?

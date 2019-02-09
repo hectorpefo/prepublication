@@ -31,6 +31,7 @@ We find the optimal game by recursively calling a function that yields an optima
 ```python
 
 # Nine-card game played optimally.  Players are 0 and 1, cards are 1 to 9.
+# Nine-card game played optimally.  Players are 0 and 1, cards are 1 to 9.
 
 def handWins(hand):
 	for i in range(len(hand) - 2):
@@ -57,11 +58,10 @@ def getOptimalCompletion(hands, nextPlayer):
 		newHands = [list(hands[0]), list(hands[1])]
 		newHands[nextPlayer].append(nextCard)
 		OptimalCompletion = getOptimalCompletion(newHands, 1 - nextPlayer)
-		result = OptimalCompletion[0]
-		if result == nextPlayer:
+		if OptimalCompletion[0] == nextPlayer:
 			return OptimalCompletion
-		elif result == 2 or bestOptimalCompletion == []:
-			# a draw or a loss but the first card tested
+		elif OptimalCompletion[0] == 2 or bestOptimalCompletion == []:
+			# a draw, or a loss but the first card tested; best so far either way
 			bestOptimalCompletion = OptimalCompletion
 	return bestOptimalCompletion
 

@@ -26,11 +26,7 @@ The 8 triples that sum to 15 are:
 
 A losing player making their last move must face a predicament wherein their opponent has two ways to sum to 15 with two of the remaining cards, for if there's only one way, they can just pick up whichever card the opponent needs.  Now, this can never happen with the opponent (who would have to be the first player after their fourth turn) holding cards A, B, C, D such that two pairs of them sum to 15 each with one remaining card.  For then a win would have been available to them on the fourth turn.  So it must be a situation where cards A, B, and C sum to 15 with still-available cards D and E as follows: A+C+D and B+C+E.  In that case, neither A nor B can have been chosen on the last turn, because then there would again have been a win available instead; so it can only have been C, the common card in the sums.  
 
-We find the optimal game by recursively calling a function that yields the
-optimally-played completion of a given partially-played game.  It turns out
-that the best either player can do is to draw.  The particular draw that this
-code lands on doesn't really matter, but the hands are 
-`[[9, 8, 3, 6, 2], [5, 7, 4, 1]]`.  
+We find the optimal game by recursively calling a function that yields an optimally-played completion of a given partially-played game ("an" optimally-played completion because there can be ties).  It turns out that the best either player can do is to draw.  The particular draw that this code lands on isn't really significant, but the hands are `[[9, 8, 3, 6, 2], [5, 7, 4, 1]]`.  
 
 ```python
 

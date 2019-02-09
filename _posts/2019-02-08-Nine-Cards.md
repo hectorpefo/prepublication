@@ -33,8 +33,6 @@ We find the optimal game by recursively calling a function that yields an optima
 # Nine-card game played optimally.  Players are 0 and 1, cards are 1 to 9.
 
 def handWins(hand):
-	if len(hand) < 3:
-		return False
 	for i in range(len(hand) - 2):
 		for j in range(i+1, len(hand) - 1):
 			for k in range(j+1,len(hand)):

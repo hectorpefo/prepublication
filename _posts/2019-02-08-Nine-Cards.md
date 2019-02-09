@@ -36,8 +36,6 @@ code lands on doesn't really matter, but the hands are
 
 # Nine-card game played optimally.  Players are 0 and 1, cards are 1 to 9.
 
-# Nine-card game played optimally.  Players are 0 and 1, cards are 1 to 9.
-
 def handWins(hand):
 	if len(hand) < 3:
 		return False

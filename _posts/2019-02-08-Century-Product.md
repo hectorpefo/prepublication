@@ -7,6 +7,7 @@ date: 2019/02/08
 
 >Given any three random integers — X, Y and Z — what are the chances that their product is divisible by 100?
 
+
 <!--more-->
 
 ([fivethirtyeight](https://fivethirtyeight.com/features/525600-minutes-of-math/))
@@ -14,7 +15,7 @@ date: 2019/02/08
 
 ## Solution
 
-Reading the question charitably (since "random integer" has no specific meaning), there will be an answer if there is a limit for a uniform distribution of positive integers up to some number $N$. But we can ignore that technicality, and make do with idealization that since every second, fourth, fifth, and twenty-fifth integer are divisible by $2, 4, 5,$ and $25$, the chances of getting a random integer divisible by those numbers are $1/2$, $1/4$, $1/5$, and $1/25$.
+Reading the question charitably (since "random integer" has no specific meaning), there will be an answer if there is a limit for a uniform distribution of positive integers up to some number $N$. But we can ignore that technicality, and make do with the idealization that since every second, fourth, fifth, and twenty-fifth integer are divisible by $2, 4, 5,$ and $25$, the chances of getting a random integer divisible by those numbers are $1/2$, $1/4$, $1/5$, and $1/25$.
 
 The product $XYZ$ is divisible by $100$ if and only if it has at least two factors of $2$ and at least two factors of $5$.  The chance that it has at least two factors of $2$ is $1$ minus the chance that it has exactly zero factors of $2$ (which is $(1/2)^3$ or $1/8$) and minus the chance that it has exactly one factor of $2$.  It has exactly one factor of two if one of the three numbers itself has exactly one factor of $2$ and the other two are odd.  A number has exactly one factor of $2$ if it is one of the half of all even numbers that is not divisible by $4$; so $1/2$ times $1/2$, or $1/4$ of all numbers have this property.  So:
 

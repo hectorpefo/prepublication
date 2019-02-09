@@ -17,11 +17,24 @@ date: 2019/02/08
 
 ## Solution
 
+The 8 triples that sum to 15 are:
+```
+9,5,1 8,6,1 7,6,2 6,5,4
+9,4,2 8,5,2 7,5,3
+      8,4,3
+```
+
+A losing player making their last move must face a predicament wherein their opponent has two ways to sum to 15 with two of the remaining cards, for if there's only one way, they can just pick up whichever card the opponent needs.  Now, this can never happen with the opponent (who would have to be the first player after their fourth turn) holding cards A, B, C, D such that two pairs of them sum to 15 each with one remaining card.  For then a win would have been available to them on the fourth turn.  So it must be a situation where cards A, B, and C sum to 15 with still-available cards D and E as follows: A+C+D and B+C+E.  In that case, neither A nor B can have been chosen on the last turn, because then there would again have been a win available instead; so it can only have been C, the common card in the sums.  
+
 We find the optimal game by recursively calling a function that yields the
 optimally-played completion of a given partially-played game.  It turns out
-that the best either player can do is to draw.
+that the best either player can do is to draw.  The particular draw that this
+code lands on doesn't really matter, but the hands are 
+`[[9, 8, 3, 6, 2], [5, 7, 4, 1]]`.  
 
 ```python
+
+# Nine-card game played optimally.  Players are 0 and 1, cards are 1 to 9.
 
 # Nine-card game played optimally.  Players are 0 and 1, cards are 1 to 9.
 
@@ -35,25 +48,23 @@ def handWins(hand):
 					return True
 	return False
 
-def getOptimalCompletion(cardsPlayed, hands, nextPlayer):
+def getOptimalCompletion(hands, nextPlayer):
 	# if game's over, return the result and the hands
 	if handWins(hands[0]):
 		return [0,hands]
 	elif handWins(hands[1]):
 		return [1,hands]
-	elif len(cardsPlayed) == 9:
+	elif len(hands[0]) == 5:
 		return [2,hands]
 	# otherwise, find the best optimal completion available by playing each
 	# of the remaining cards, and return that.
 	bestOptimalCompletion = []
 	for nextCard in range(1,10):
-		if nextCard in cardsPlayed:
+		if nextCard in hands[0] or nextCard in hands[1]:
 			continue
-		newPlayed = list(cardsPlayed)
-		newPlayed.append(nextCard)
 		newHands = [list(hands[0]), list(hands[1])]
 		newHands[nextPlayer].append(nextCard)
-		OptimalCompletion = getOptimalCompletion(newPlayed, newHands, 1 - nextPlayer)
+		OptimalCompletion = getOptimalCompletion(newHands, 1 - nextPlayer)
 		result = OptimalCompletion[0]
 		if result == nextPlayer:
 			return OptimalCompletion
@@ -62,7 +73,8 @@ def getOptimalCompletion(cardsPlayed, hands, nextPlayer):
 			bestOptimalCompletion = OptimalCompletion
 	return bestOptimalCompletion
 
-print(getOptimalCompletion ([],[[],[]],0))
+print(getOptimalCompletion ([[],[]],0))
+
 ```
 
 <br>

@@ -19,7 +19,7 @@ date: 2019/07/13
 
 ## Solution
 
-It's tempting to think that the optimal strategy when it's her turn is for Ann to maximize the chance that she will make a shot that Bob will miss.  That chance is $p(1-p)$ (where $p$ is the probability of making the shot), which is maximized at $p = 1/2$.  However, this underplays the costly risk of losing her turn. It turns out to be optimal to be extremely risk-averse.
+It's tempting to think that the optimal strategy when it's her turn is for Ann to maximize the chance that she will make a shot that Bob will miss.  That chance is $p(1-p)$ (where $p$ is the probability of making the shot), which is maximized at $p = 1/2$.  However, this underplays the costly risk of losing her turn. It turns out to be optimal for Ann to be extremely risk-averse, and to rack up more letters for Bob over very long turns than she'd manage over shorter ones.
 
 Whenever it's her turn, what Alice really wants is to maximize the expected number $E$ of letters Bob will gain before it's next his turn. When Ann shoots, there is probability $1-p$ that she misses and Bob gets the next turn, having gained zero letters. There is probability $p$ that she makes the shot, in which case she expects Bob to gain $1-p$ (the chance of his missing) letters with his follow-up shot, after which she is back to expecting Bob to gain $E$ more letters before his next turn. (There's a subtle complication involving game endings here, which I won't go into except to say that we can avoid it by harmlessly assuming that play continues after the winner is determined, until the winner misses a shot.) Therefore:
 
@@ -29,9 +29,9 @@ Solving for $E$ requires dividing by $1-p$, which is fine because we know that $
 
 Now let's ask how likely Ann is to win, if both she and Bob adopt shot probability $p$. Let $P(a,b,t)$ be the probability that Ann wins if she currently has $a$ letters, Bob has $b$, and is is player $t$'s turn (let Ann be $A$ and Bob $B$). We know that $P(a,5,t) = 1$ for $0 \leq a \leq 4$ and similarly $P(5,b,t) = 0$ for $0 \leq b \leq 4$. For all other $a$ and $b$:
 
-$$P(a,b,A) = (1-p)P(a,b,B) + p((1-p)P(a,b+1,A) + pP(a,b,A)$$
+$$P(a,b,A) = (1-p)P(a,b,B) + p((1-p)P(a,b+1,A) + pP(a,b,A))$$
 
-$$P(a,b,B) = (1-p)P(a,b,A) + p((1-p)P(a+1,b,B) + pP(a,b,B)$$
+$$P(a,b,B) = (1-p)P(a,b,A) + p((1-p)P(a+1,b,B) + pP(a,b,B))$$
 
 Solving, we get:
 

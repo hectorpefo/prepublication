@@ -33,7 +33,7 @@ $$P(a,b,A) = (1-p)P(a,b,B) + p(1-p)P(a,b+1,A) + p^2P(a,b,A)$$
 
 $$P(a,b,B) = (1-p)P(a,b,A) + p(1-p)P(a+1,b,B) + p^2P(a,b,B)$$
 
-Solving, we get:
+Breaking out the algebra, we find:
 
 $$P(a,b,A) = \frac{P(a,b+1,A) + (1+p)P(a+1,b,B)}{2+p}$$
 

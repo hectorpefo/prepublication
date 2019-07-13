@@ -19,7 +19,9 @@ date: 2019/07/13
 
 ## Solution
 
-Whenever it's her turn, Alice wants to maximize the expected number $E$ of letters Bob will gain before it's next his turn.  Let's assume that there is some shot-making probability $p$ that achieves this. When Ann shoots, there is probability $1-p$ that she misses and Bob gets the next turn, having gained zero letters. There is probability $p$ that she makes the shot, in which case she expects Bob to gain $1-p$ (the chance of his missing) letters with his follow-up shot, after which she is back to expecting Bob to gain $E$ more letters before his next turn. (There's a subtle complication involving game endings here, which I won't go into except to say that we can avoid it by harmlessly assuming that play continues after the winner is determined, until the winner misses a shot.) Therefore:
+It's tempting to think that the optimal strategy when it's her turn is for Ann to maximize the chance that she will make a shot that Bob will miss.  That chance is $p(1-p)$ (where $p$ is the probability of making the shot), which is maximized at $p = 1/2$.  However, this underplays the costly risk of losing her turn. It turns out to be optimal to be extremely risk-averse.
+
+Whenever it's her turn, what Alice really wants is to maximize the expected number $E$ of letters Bob will gain before it's next his turn. When Ann shoots, there is probability $1-p$ that she misses and Bob gets the next turn, having gained zero letters. There is probability $p$ that she makes the shot, in which case she expects Bob to gain $1-p$ (the chance of his missing) letters with his follow-up shot, after which she is back to expecting Bob to gain $E$ more letters before his next turn. (There's a subtle complication involving game endings here, which I won't go into except to say that we can avoid it by harmlessly assuming that play continues after the winner is determined, until the winner misses a shot.) Therefore:
 
 $$E = (1-p)\times 0 + p \times ((1-p) + E)$$
 
@@ -37,6 +39,6 @@ $$P(a,b,A) = \frac{P(a,b+1,A) + (1+p)P(a+1,b,B)}{2+p}$$
 
 $$P(a,b,B) = \frac{P(a+1,b,B) + (1+p)P(a,b+1,A)}{2+p}$$
 
-These allow us to calculate all values of $P(a,b,t)$, including ultimately $P(0,0,A)$, which is Ann's probability of victory. With a value of $p$ near $1$, this comes out to approximately $.5488$.
+These equations allow us to calculate all $50$ remaining values of $P(a,b,t)$, including ultimately $P(0,0,A)$, which is Ann's probability of victory. With a value of $p$ near $1$, this comes out to approximately $.5488$.
 
 <br>

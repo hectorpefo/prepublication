@@ -19,7 +19,7 @@ date: 2019/07/13
 
 ## Solution
 
-Whenever it's her turn, Alice wants to maximize the expected number $E$ of letters Bob will gain before it's next his turn.  Let's assume that there is some shot-making probability $p$ that achieves this. When Ann shoots, there is probability $1-p$ that she misses and Bob gets the next turn, having gained zero letters. There is probability $p$ that she makes the shot, in which case she expects Bob to gain $1-p$ (the chance of his missing) letters with his follow-up shot, after which she is back to expecting Bob to gain $E$ more letters. Therefore:
+Whenever it's her turn, Alice wants to maximize the expected number $E$ of letters Bob will gain before it's next his turn.  Let's assume that there is some shot-making probability $p$ that achieves this. When Ann shoots, there is probability $1-p$ that she misses and Bob gets the next turn, having gained zero letters. There is probability $p$ that she makes the shot, in which case she expects Bob to gain $1-p$ (the chance of his missing) letters with his follow-up shot, after which she is back to expecting Bob to gain $E$ more letters before his next turn. (There's a subtle complication involving game endings here, which I won't go into except to say that we can avoid it by harmlessly assuming that play continues after the winner is determined, until the winner misses a shot.) Therefore:
 
 $$E = (1-p)\times 0 + p \times ((1-p) + E)$$
 

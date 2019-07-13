@@ -27,11 +27,11 @@ $$E = (1-p)\times 0 + p \times ((1-p) + E)$$
 
 Solving for $E$ requires dividing by $1-p$, which is fine because we know that $p$ cannot be $1$ (the game would never end). We find that $E = p$. This means that Ann's best move is always to take a shot that she's nearly certain to make. It also means that there is no truly optimal strategy, since there is no maximal probability less than $1$.
 
-Now let's ask how likely Ann is to win, if both she and Bob adopt shot probability $p$. Let $P(a,b,t)$ be the probability that Ann wins if she currently has $a$ letters, Bob has $b$, and is is player $t$'s turn (let Ann be $A$ and Bob $B$). We know that $P(a,5,t) = 1$ for $0 \leq a \leq 4$ and similarly $P(5,b,t) = 0$ for $0 \leq b \leq 4$. For all other $a$ and $b$:
+Now let's ask how likely Ann is to win, if both she and Bob adopt shot probability $p$. Let $P(a,b,t)$ be the probability that Ann wins if she currently has $a$ letters, Bob has $b$, and is is player $t$'s turn (let Ann be $A$ and Bob $B$). We know that $P(a,5,t) = 1$ for $0 \leq a \leq 4$ and similarly $P(5,b,t) = 0$ for $0 \leq b \leq 4$. Since the three possible outcomes of a shot are a miss (the turn changes hand), a make followed by the other player's miss (the other player gets a letter), and a make followed by a make (nothing changes), for all other $a$ and $b$:
 
-$$P(a,b,A) = (1-p)P(a,b,B) + p((1-p)P(a,b+1,A) + pP(a,b,A))$$
+$$P(a,b,A) = (1-p)P(a,b,B) + p(1-p)P(a,b+1,A) + p^2P(a,b,A)$$
 
-$$P(a,b,B) = (1-p)P(a,b,A) + p((1-p)P(a+1,b,B) + pP(a,b,B))$$
+$$P(a,b,B) = (1-p)P(a,b,A) + p(1-p)P(a+1,b,B) + p^2P(a,b,B)$$
 
 Solving, we get:
 

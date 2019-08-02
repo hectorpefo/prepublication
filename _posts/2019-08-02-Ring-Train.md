@@ -26,7 +26,7 @@ For example, suppose you first come to a changed light in car $-6$, as you head 
 
 How efficient is this? Each back-and-forth circuit ensuring lights are on and off takes $4 \cdot 2^i$, or $2^{i+2}$ steps, for $i$ in $\\{0,1,2,\ldots\\}$. Let $N$ be the length of the train.  The worst-case scenario, in terms of efficiency, is when the length is discovered midway through the lower end of a circuit's tour through negative numbered cars (i.e., when visiting the lowest-numbered previously-visited car; this happens when $N$ is of the form $3 \cdot 2^k$, three-quarters of the way through circuit $k+1$, which, if completed, would take $2^{k+3}$ steps. The total number of steps would be
 
-$$4+8+\cdots+ 2^{k+2} + 3 \cdot 2^{k+3} = 2^{k+4} - 4 + 2\cdot 2^{k+3} = 32\cdot 2^k - 4 = \frac{32}{3}N - 4$$
+$$4+8+\cdots+ 2^{k+2} + \frac{3}{4} \cdot 2^{k+3} = 2^{k+3} - 4 + 3\cdot 2^{k+1} = 22\cdot 2^k - 4 = \frac{22}{3}N - 4$$
 
 (This relies on the fact that $1+2+4+\cdots+2^n = 2^{n+1}-1$.)
 

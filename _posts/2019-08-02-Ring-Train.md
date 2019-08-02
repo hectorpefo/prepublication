@@ -18,13 +18,13 @@ date: 2019/08/02
 
 ## Solution
 
-Label the cars with positive and negative integers, based on distance from the start car, which is number $0$. Each car gets labeled an infinite number of numbers, which are equal modulo $N$, where $N$ is the number of cars.
+Label the cars with positive and negative integers, based on distance from the start car, which is number $0$. Each car gets labeled by infinitely many numbers, all of which are equal modulo $N$, where $N$ is the number of cars.
 
-Go to car $1$, ensure that its light is on, then to car $-1$, and ensure that its light is off. Now go to car $2$, and ensure that its light is on. Then to car $-2$, ensuring that its light is off. Then to car $4$, car $-4$, car $8$, car $-8$ and so on, always ensuring that the positively numbered cars' lights are on, and the negative ones off.  Stop when a previously-visited postively-numbered car has its light turned off or a negatively-numbered one has its light turned on.  Then you'll know that this car is the last car you ensured was off when you last headed in the negative direction, or the last you ensured was on in the positive direction, which lets you calculate the length of the train by subtracting the negative integer from the positive integer that you know label the car. 
+Go to car $1$, ensure that its light is on, then to car $-1$, and ensure that its light is off. Now go to car $2$, and ensure that its light is on. Then to car $-2$, ensuring that its light is off. Then to car $4$ (ensuring that cars $3$ and $4$ are on), car $-4$, car $8$, car $-8$ and so on, always ensuring that the positively numbered cars' lights are on, and the negative ones off.  Stop when a previously-visited postively-numbered car has its light turned off or a negatively-numbered one has its light turned on.  Then you'll know that this car is the last car you ensured was off when you last headed in the negative direction, or the last you ensured was on in the positive direction, which lets you calculate the length of the train by subtracting the negative integer from the positive integer that you know label the car. 
 
 For example, suppose you first come to a changed light in car $-6$, as you head in the negative direction from car $16$ (you had ensured car $-6$'s light was off on your way to car $-8$ previously). This means that car $-6$ is car $16$, and so, subtracting, there are $22$ cars in the train.
 
-How efficient is this? Each back-and-forth circuit ensuring lights are on and off takes $4 \times 2^i$, or $2^{i+2}$ steps, for $i$ in $\\{0,1,2,\ldots\\}$. Where $N$ is the length of the train, the worst case is that the length is discovered at the end of a circuit, which happens where $N$ is a power of $2$, say $2^k$, and the last completed back-and-forth circuit is of length $2^{k+1}$. Thus, the total number of steps is at most:
+How efficient is this? Each back-and-forth circuit ensuring lights are on and off takes $4 \times 2^i$, or $2^{i+2}$ steps, for $i$ in $\\{0,1,2,\ldots\\}$. Where $N$ is the length of the train, the worst case is that the length is discovered at the end of a circuit, which happens if $N$ is a power of $2$, say $2^k$, so that the last completed back-and-forth circuit is of length $2^{k+1}$. Thus, the total number of steps is at most:
 
 $$4+8+\cdots+ 2^{k+1} = 2^{k+2} - 4 = 4N - 4$$
 

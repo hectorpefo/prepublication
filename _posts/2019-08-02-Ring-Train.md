@@ -24,7 +24,7 @@ Go to car $1$, ensure that its light is on, then to car $-1$, and ensure that it
 
 For example, suppose you first come to a changed light in car $-6$, as you head in the negative direction from car $16$ (you had ensured car $-6$'s light was off on your way to car $-8$ previously). This means that car $-6$ is car $16$, and so, subtracting, there are $22$ cars in the train.
 
-How efficient is this? Each back-and-forth circuit ensuring lights are on and off takes $4 \times 2^i$, or $2^{i+2}$ steps, for $i$ in $\{0,1,2,\ldots\usepackage\}$. Where $N$ is the length of the train, the worst case is that the length is discovered at the end of a circuit, which happens where $N$ is a power of $2$, say $2^k$, and the last completed back-and-forth circuit is of length $2^{k+1}$. Thus, the total number of steps is at most:
+How efficient is this? Each back-and-forth circuit ensuring lights are on and off takes $4 \times 2^i$, or $2^{i+2}$ steps, for $i$ in $\\{0,1,2,\ldots\\}$. Where $N$ is the length of the train, the worst case is that the length is discovered at the end of a circuit, which happens where $N$ is a power of $2$, say $2^k$, and the last completed back-and-forth circuit is of length $2^{k+1}$. Thus, the total number of steps is at most:
 
 $$4+8+\cdots+ 2^{k+1} = 2^{k+2} - 4 = 4N - 4$$
 

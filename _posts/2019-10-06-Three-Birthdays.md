@@ -15,7 +15,7 @@ date: 2019/10/06
 
 ([fivethirtyeight](https://fivethirtyeight.com/features/who-wants-to-be-a-riddler-millionaire/))
 
-##Solution
+## Solution
 
 This is an exercise in combinatorics.  For a group of $n$ people, there are $365^n$ possibilities --- all equally likely --- for what all of their individual birthdays might be. If we can count the number of these possibilities in which there are at least three people with the same birthday, we divide and we're done.
 

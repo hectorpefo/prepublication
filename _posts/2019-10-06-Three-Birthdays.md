@@ -23,7 +23,7 @@ The possibilities in which at least three people have the same birthday are all 
 
 There is one such possibility for every way of answering the following three questions: who are the doubled pairs? what birthdays do these paired people have? what birthdays does everyone else have? The number of possibilities will be a product: the numbers of ways of answering the first question times the number of ways of answering the second (given an answer to the first) times the number of ways of answering the third (given answers to the first and second).
 
-### 1. Who are the paired people?
+#### 1. Who are the paired people?
 
 It will be easiest first to count how many ways of *writing a list* of $k$ pairs there are. This is easy: we have $n$ choices for the first person listed, $n-1$ for the second, and so on down to $n-2k+1$ for the last; the product of these numbers is the number of lists.
 
@@ -31,13 +31,13 @@ This will over-count ways of pairing people into $k$ pairs, and in two ways. Giv
 
 $$\frac{\prod_{i=0}^{2k-1} n - i }{2^kk!}$$
 
-### 2. What birthdays do these paired people have?
+#### 2. What birthdays do these paired people have?
 
 Start with an arbitrary listing of the $k$ pairs. To assign them birthdays, there are $365$ options for the first pair, $364$ for the second, and so on down to $365-k+1$ options for the last. The total number of ways of assigning the pairs distinct birthdays, then, is the product of all of these, or:
 
 $$\prod_{i=0}^{k-1} 365 - i $$
 
-### 3. What birthdays does everyone else have?
+#### 3. What birthdays does everyone else have?
 
 There are $365-k$ birthdays left, and we have to distribute $n-2k$ of them to the remaining $n-2k$ people. Reasoning exactly as we just did in answering the second question, we count the number of ways of doing this:
 

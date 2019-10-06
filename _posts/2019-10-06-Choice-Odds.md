@@ -27,6 +27,6 @@ $$ P(b) = P(b \,\&\, B) + P(b \,\&\, \neg B) = .7 + .1 = .8$$
 
 We are looking for the probability of $B$ conditional on $b$, which is the probability we'd assign to $B$ on learning that $b$ is true (in the Bayesian world, that's called "learning by conditionalization").  Here goes:
 
-$$ P(B \| b) = \frac{P(B\, \&\, b)}{P(b)} = \frac{.7}{.8} = .875$$
+$$ P(B | b) = \frac{P(B\, \&\, b)}{P(b)} = \frac{.7}{.8} = .875$$
 
 <br>

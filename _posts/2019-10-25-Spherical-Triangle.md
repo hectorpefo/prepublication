@@ -33,6 +33,6 @@ $$12\alpha = 4\pi + 4A_T$$
 
 $$\alpha = \frac{\pi + A_T}{3}$$
 
-If $A_T$ is $\pi/4$, then $\alpha$ is $5\pi/12$, or 75 degrees.
+If $A_T$ is $\pi/4$, then $\alpha$ is $5\pi/12$, or $75$ degrees.
 
 <br>

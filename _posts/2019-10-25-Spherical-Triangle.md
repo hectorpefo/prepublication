@@ -19,7 +19,7 @@ date: 2019/10/25
 
 ![Spherical triangle.](/img/SphericalTriangle.PNG)
 
-For simplicity, we'll work with a unit sphere (of surface area $4\pi$) and find the angle \alpha$ needed for a triangle of area $\pi/4$.
+For simplicity, we'll work with a unit sphere (of surface area $4\pi$) and find the angle $\alpha$ needed for a triangle of area $\pi/4$.
 
 In the figure, note that the sides of the triangle lie on three great circles each pair of which intersect twice, on polar opposite points on the sphere. 
 

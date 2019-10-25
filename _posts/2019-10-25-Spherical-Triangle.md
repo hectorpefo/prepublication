@@ -23,7 +23,7 @@ For simplicity, we'll work with a unit sphere (of surface area $4\pi$) and find 
 
 In the figure, note that the sides of the triangle lie on three great circles each pair of which intersect twice, on polar opposite points on the sphere. 
 
-A *lune* is the section of a sphere's surface formed by two such great circles. Since these circles intersect with an angle $\alpha$, then the area of the lunes is $\alpha/2\pi$ times the surface area of the sphere, or $2\alpha$. Each pair (of three pairs total) of the circles determines two lunes of angle $\alpha$, for six total. 
+A *lune* is a section of a sphere's surface bounded by two such great circles. Since these circles intersect with an angle $\alpha$, then the area of the lunes is $\alpha/2\pi$ times the surface area of the sphere, or $2\alpha$. Each pair (of three pairs total) of the circles determines two lunes of angle $\alpha$, for six in total. 
 
 Notice that the three circles determine also a second, congruent triangle on the far side of the sphere.
 

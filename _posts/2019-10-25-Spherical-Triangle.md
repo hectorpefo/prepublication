@@ -9,7 +9,7 @@ date: 2019/10/25
 >
 >To be a proper triangle, the three corners should be connected by arcs that are “straight,” meaning they go directly from one corner to the next via the shortest possible path. (Think about air travel: When you flying from the West Coast of the U.S. to Europe, you’ll fly north of the Arctic Circle along the way, since that’s the shortest path over the Earth’s curved surface.)
 >
->I want an eye that’s precisely half that size, or one-sixteenth of the pumpkin’s surface. For such an ideal pumpkin eye, at what angle should each of the sides meet?
+>I want an eye that’s one-sixteenth of the pumpkin’s surface. For such an ideal pumpkin eye, at what angle should each of the sides meet?
 
 <!--more-->
 

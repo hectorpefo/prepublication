@@ -33,6 +33,4 @@ $$12\alpha = 4\pi + 4A$$
 
 $$\alpha = \frac{\pi + A}{3}$$
 
-If $A$ is $\pi/4$, then $\alpha$ is $5\pi/12$, or $75$ degrees.
-
 <br>

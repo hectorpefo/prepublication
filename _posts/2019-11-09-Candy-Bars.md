@@ -17,7 +17,7 @@ date: 2019/11/09
 
 ## Solution
 
-This is a [stars and bars](https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)) problem.
+This is a [stars and bars](https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)) problem, where we're in essence asking, how many sequences of $m$ integers sum to $n$? It might seem that our problem isn't that one, or is really $100$ such problems, because we have to take into account all candy totals from $1$ to $100$. However, if we add into consideration the number of additional candies that would be needed to reach $100$ we find ourselves looking at not three but four numbers, with the same sum every time. 
 
 Call the types of candy $A$, $B$, and $C$. Here's how you'll make your purchasing decision. You have a container with $103$ candy slots in a row, and you have three pennies to use as separators between the different types of candy. Each penny gets its own slot. You will buy as many $A$s as there are slots to the left of the leftmost penny, as many $B$s as slots between the two leftmost pennies, as many $C$s as slots between the two rightmost pennies, and any slots to the right of all three pennies will stay empty. There are $103 \choose 3$ ways of choosing slots for the pennies, one of which we eliminate because it results in purchasing no candy, so our answer is ${103 \choose 3} - 1$, or $176,850$.
 

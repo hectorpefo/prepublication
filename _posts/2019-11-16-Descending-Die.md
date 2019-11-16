@@ -18,7 +18,7 @@ date: 2019/11/16
 
 ([fivethirtyeight](https://fivethirtyeight.com/features/how-low-can-you-roll/))
 
-##Solution
+## Solution
 
 Suppose I initially roll a $5$. Then I will score $.5$ plus, on average, a tenth of what I'd score if I was using a $6$-sided die numbered $0$ to $5$. Where $E_n$ is the average score with an $n$-sided die:
 
@@ -37,7 +37,7 @@ Since we know that $E_1$ is $0$ (a one-sided die is, I guess, a sphere with a ze
 Suppose that, as in the case of $E_2$, for some $n$, $E_{n-1}$ is $(n-2)/19$. Then:
 
 $$E_n = \frac{(n-1) \left( \frac{10(n-2)}{19} + 1\right)}{10n - 1)}
-= frac{n-1}{19}
+= \frac{n-1}{19}
 $$
 
 Thefore, for all $n$, $E_n$ is $(n-1)/19$, and in particular the average score with a $10$-sided die is $9/19$.

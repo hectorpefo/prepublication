@@ -20,6 +20,8 @@ date: 2019/11/16
 
 ## Solution
 
+### Via Recurrence
+
 Suppose I initially roll a $5$. Then I will score $.5$ plus, on average, a tenth of what I'd score if I was using a $6$-sided die numbered $0$ to $5$. Where $E_n$ is the average score with an $n$-sided die:
 
 $$E_n = \sum_{i=1}^{n-1} \frac{1}{n}\left( \frac{i}{10} + \frac{1}{10}E_{i+1} \right)
@@ -41,5 +43,13 @@ $$E_n = \frac{(n-1) \left( \frac{10(n-2)}{19} + 1\right)}{10n - 1)}
 $$
 
 Thefore, for all $n$, $E_n$ is $(n-1)/19$, and in particular the average score with a $10$-sided die is $9/19$.
+
+### Via Infinite Sum
+
+The first digit will be $4.5$ on average (contributing a value of $.45$ to the score). Whatever it is, the second digit'will be half of it, or $2.25$, on average (contributing $.0225$). That of the third digit will be $1.125$ (contributing $.00125$), and so on.  By the linearity of expectation, the expectation of a sum is the sum of the expectations.  Therefore the average score is the sum of the expected contributions of the digits, and the expected contributions start at $.45$, decreasing every digit by a factor of $.05$:
+
+$$E = .45 \sum_{i = 0}^\inf .05^i$$
+
+That infinite sum is a geometric series with ratio $.05$, and hence a value of $1/(1 - .05), or $20/19$. Therefore $E$ is $9/19$.
 
 <br>

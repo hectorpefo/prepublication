@@ -46,10 +46,10 @@ Thefore, for all $n$, $E_n$ is $(n-1)/19$, and in particular the average score w
 
 ### Via Infinite Sum
 
-The first digit will be $4.5$ on average (contributing a value of $.45$ to the score). Whatever it is, the second digit'will be half of it, or $2.25$, on average (contributing $.0225$). That of the third digit will be $1.125$ (contributing $.00125$), and so on.  By the linearity of expectation, the expectation of a sum is the sum of the expectations.  Therefore the average score is the sum of the expected contributions of the digits, and the expected contributions start at $.45$, decreasing every digit by a factor of $.05$:
+Assuming an $n$-sided die numbered from $0$ to $n-1$, the first digit will be $(n-1)/2$ on average, contributing a value of $(n-1)/20$ to the score. Whatever it is, the second digit will be half of it, on average, contributing an average of $1/20$ as much. Similarly for the third and subsequent digits. By the linearity of expectation, the expectation of a sum is the sum of the expectations.  Therefore the average score is the sum of the expected contributions of the digits, which start at $(n-1)/20$, decreasing every digit by a factor of $1/20$:
 
-$$E = .45 \sum_{i = 0}^\infty .05^i$$
+$$E_n = (n-1)/20 \sum_{i = 0}^\infty \left(\frac{1}{20}\right)^i$$
 
-That infinite sum is a geometric series with ratio $.05$, and hence a value of $1/(1 - .05)$, or $20/19$. Therefore $E$ is $9/19$.
+The infinite sum is a geometric series with ratio $1/20$, and hence a value of $1/(1 - 1/20)$, or $20/19$. Therefore $E_n$ is $(n-1)/19$. 
 
 <br>

@@ -50,6 +50,6 @@ The first digit will be $4.5$ on average (contributing a value of $.45$ to the s
 
 $$E = .45 \sum_{i = 0}^\infty .05^i$$
 
-That infinite sum is a geometric series with ratio $.05$, and hence a value of $1/(1 - .05), or $20/19$. Therefore $E$ is $9/19$.
+That infinite sum is a geometric series with ratio $.05$, and hence a value of $1/(1 - .05)$, or $20/19$. Therefore $E$ is $9/19$.
 
 <br>

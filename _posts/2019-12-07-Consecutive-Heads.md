@@ -1,8 +1,8 @@
 ---
 layout: post
 published: true
-title: Juke Box
-date: 2019/12/06
+title: Consecutive Heads
+date: 2019/12/07
 ---
 
 >If you flip a fair coin 10 times (or n times for extra credit) + how likely is it that the final two flips are the first and only time you see a consecutive pair of heads?

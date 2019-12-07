@@ -5,7 +5,7 @@ title: Consecutive Heads
 date: 2019/12/07
 ---
 
->If you flip a fair coin 10 times (or n times for extra credit) + how likely is it that the final two flips are the first and only time you see a consecutive pair of heads?
+>If you flip a fair coin 10 times (or n times for extra credit), how likely is it that the final two flips are the first and only time you see a consecutive pair of heads?
 
 <!--more-->
 
@@ -27,17 +27,17 @@ $C_5 = 3$: $THTHH$, $HTTHH$, $TTTHH$
 
 $C_6 = 5$: $HTHTHH$, $TTHTHH$, $THTTHH$, $HTTTHH$, $TTTTHH$
 
-A first observation is that it looks like we're seeing the Fibonacci numbers, starting with $0$ and $1$, each is the sum of the previous two. 
+A first observation is that it looks like we're seeing the Fibonacci numbers: starting with $0$ and $1$, each is the sum of the previous two. 
 
 A second observation confirms this. We can generate the sequences of length $n$ from those of length $n-1$ and $n-2$ as follows. From each sequence of length $n-2$, generate one of length $n$ by inserting $HT$ before the final $HH$. From each sequence of length $n-1$, generate one of length $n$ by inserting $T$ in the same spot. All sequences of length $n$ are generable in exactly one of these two ways. They end either in $HTHH$, in which case the rest of the sequence must be one of the sequences of length $n-2$ minus the final $HH$, or in $TTHH$, in which case the rest of the sequence must be a sequence of length $n-1$ minus the terminal $THH$.
 
 So $C_n = C_{n-2} + C_{n-1}$, and these are indeed the Fibonacci numbers $F_{n-1}$.
 
-Having numbered the sequences of flips that are required, we can get the desired probability simply by dividing by the total number of sequences $2^n$:
+Having numbered the sequences of flips that are as required, we can get the desired probability simply by dividing by the total number of possible sequences $2^n$:
 
-$$P_n = \frac{F_{n-1}}{2^n$}$$
+$$P_n = \frac{F_{n-1}}{2^n}$$
 
-So $P_{10}$ is $34/1024$, or $17/512$.
+So $P_{10}$ is $34/1024$, or about $3.3$ percent.
 
 Let's play for even more extra credit. The smallest values of $P_n$ are:
 

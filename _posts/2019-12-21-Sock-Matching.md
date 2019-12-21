@@ -41,4 +41,16 @@ Because the greatest $i$ for which $P(X>i)$ is non-zero is $N$:
 
 $$E(X) = {2N \choose N}^{-1}\sum_{i=0}^N {2N-i \choose N} 2^i$$
 
+It's a rather well-known fact that $2N \choose N$ asymptotically approaches $4^N/\sqrt{\pi N}$. There is a nice [proof of that fact](https://www.moderndescartes.com/essays/2n_choose_n/) relying on elementary arithmetic supplemented by the [Wallis Product formula](https://en.wikipedia.org/wiki/Wallis_product) for $\pi$:
+
+$$\frac{2}{1}\cdot\frac{2}{3}\cdot\frac{4}{3}\cdot\frac{4}{5}\cdot\frac{6}{5}\cdot\frac{6}{7}\cdots = \frac{\pi}{2}$$
+
+This equation itself can be proven in [a really cool, demystifying, and elementary way](https://www-tandfonline-com.stanford.idm.oclc.org/doi/abs/10.1080/00029890.2007.11920484) "using only the mathematics taught in elementary school, that is, basic algebra, the Pythagorean theorem, and the formula $\pi r^2$ for the area of a circle of radius r." Don Knuth exposits Johan Wästlund's proof in a [fun YouTube video](https://www.youtube.com/watch?v=cI6tt9QfRdo) that I definitely recommend viewing).
+
+It remains to evaluate the sum. Think of it as an awkward way of answering the question, how many sequences of heads and tails are there in $2N$ flips of a coin?
+
+At some point in any such sequence, between flips $N$ and $2N$ (inclusive), the greatest of the tallies of heads and tails is $N$ for the last time in the sequence. Suppose that happens at flip $2N-i$, when $i \neq 0$. The next flip will be whichever of heads and tails has the tally of $N$, after which there are $i-1$ flips that can turn out as you please. Thus there are ${2N-i \choose N}2^{i-1}$ ways for that to happen with heads in the lead and similarly for tails, for a total of ${2N-1 \choose N}2^i$ ways. In the case of $i = 0$, there are also ${2N -i \choose N}2^i$ ways, corresponding to the ${2N \choose N}$ choices of flips to be heads. Thus, the sum covers all ways to flip a coin $2N$ times, and there are $2^{2N}$, or $4^N$ of them.
+
+Thus, we have $E(X) \approx \sqrt{\pi N}$ as $N \rightarrow \infty. Cool, no?
+
 <br>

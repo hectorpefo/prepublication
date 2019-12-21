@@ -33,7 +33,7 @@ With $N$ pairs of socks in the drawer, we will calculate the expected value $E(X
 
 $$E(X) = \sum_{i=0}^\infty P(X > i)$$
 
-So let's find $P(X>i)$. There are ${2N \choose i}i!$ ways for the first $i$ pulls to go (choices of the socks multiplied by the number of their orderings), out of which some are ways in which no pair occurs. How many? There are ${N \choose i$ choices of pairs to have already pulled a sock from, there are $2^i$ choices of particular socks from those pairs, and there are $i!$ orderings of those socks. So:
+So let's find $P(X>i)$. There are ${2N \choose i}i!$ ways for the first $i$ pulls to go (choices of the socks multiplied by the number of their orderings), out of which some are ways in which no pair occurs. How many? There are ${N \choose i}$ choices of pairs to have already pulled a sock from, there are $2^i$ choices of particular socks from those pairs, and there are $i!$ orderings of those socks. So:
 
 $$P(X>i) = \frac{{N \choose i}2^ii!}{{2N \choose i}i!} = {2N \choose N}^{-1}{2N-i \choose N} 2^i $$
 

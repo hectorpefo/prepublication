@@ -51,6 +51,6 @@ It remains to evaluate the sum. Think of that sum as an absurdly complex, but ab
 
 At some point in any such sequence, between flips $N$ and $2N$ (inclusive), the greatest of the tallies of heads and tails is $N$ for the last time in the sequence. Suppose that happens at flip $2N-i$, when $i \neq 0$. The next flip will be whichever of heads and tails has the tally of $N$, after which there are $i-1$ flips that can turn out as you please. Thus there are ${2N-i \choose N}2^{i-1}$ ways for that to happen with heads in the lead and similarly for tails, for a total of ${2N-1 \choose N}2^i$ ways. In the case of $i = 0$, there are also ${2N -i \choose N}2^i$ ways, corresponding to the ${2N \choose N}$ choices of flips to be heads. Thus, the sum counts all ways to flip a coin $2N$ times, and of course there are $2^{2N}$, or $4^N$ of them.
 
-Thus, we have $E(X) \asymp \sqrt{\pi N}$ as $N \rightarrow \infty$. Cool, no?
+Thus, we have $E(X) \sim \sqrt{\pi N}$ as $N \rightarrow \infty$. Cool, no?
 
 <br>

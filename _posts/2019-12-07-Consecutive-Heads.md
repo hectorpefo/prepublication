@@ -37,7 +37,6 @@ Having numbered the sequences of flips that are as required, we can get the desi
 
 $$P_n = \frac{F_{n-1}}{2^n}$$
 
-So $P_{10}$ is $34/1024$, or about $3.3$ percent.
 
 Let's play for even more extra credit. The smallest values of $P_n$ are:
 

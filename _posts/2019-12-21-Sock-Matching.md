@@ -27,7 +27,11 @@ $$E_i = \frac{i}{2N-i} + \frac{2N-2i}{2N-i} \cdot (1 + E_{i+1})$$
 
 This lets us calculate $E_i$ for any $i$, down to $E_0$, which is the overall expected number of pulled-out socks. In the case of $N=10$, it's about $5.68$ socks. 
 
-Because this approach doesn't require computing factorials, it's manageable to find the expectation for pretty large $N$. Doing so, we notice a pattern: the curve of $E$ versus $N$ looks like a scaled version of $\sqrt{N}$. Dividing the computed values of $E$ by $\sqrt{N}$, we find that, indeed, the ratio seems to approach a constant, which . . . is the square root of $\pi$! Why pi? Nothing about our recurrence relation seems to promise any insight into this, so we'll try a different approach.
+Because this approach doesn't require computing factorials, it's manageable to find the expectation for pretty large $N$. Doing so, we notice a pattern: the curve of $E$ versus $N$ looks like a scaled version of $\sqrt{N}$. Dividing the computed values of $E$ by $\sqrt{N}$, we find that, indeed, the ratio seems to approach a constant, which . . . is the square root of $\pi$! 
+
+![Graph of E versus sqrt(pi\*E), showing rapid convergence at N below 20.](/img/SockMatching.png)
+
+Why pi? Nothing about our recurrence relation seems to promise any insight into this, so we'll try a different approach.
 
 ### A combinatorial approach, and extra credit
 

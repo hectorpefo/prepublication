@@ -47,7 +47,7 @@ Because the greatest $i$ for which $P(X>i)$ is non-zero is $N$:
 
 $$E(X) = {2N \choose N}^{-1}\sum_{i=0}^N {2N-i \choose N} 2^i$$
 
-It's a rather well-known fact that the [central binomial coefficient](https://en.wikipedia.org/wiki/Central_binomial_coefficient) $2N \choose N$ asymptotically approaches $4^N/\sqrt{\pi N}$. There is a nice [proof of that fact](https://www.moderndescartes.com/essays/2n_choose_n/) relying on just elementary math supplemented by the [Wallis Product formula](https://en.wikipedia.org/wiki/Wallis_product) for $\pi$:
+Pi comes into the picture because the [central binomial coefficient](https://en.wikipedia.org/wiki/Central_binomial_coefficient) $2N \choose N$ asymptotically approaches $4^N/\sqrt{\pi N}$. There is a nice [proof of that fact](https://www.moderndescartes.com/essays/2n_choose_n/) relying on just elementary math supplemented by the [Wallis Product formula](https://en.wikipedia.org/wiki/Wallis_product) for $\pi$:
 
 $$\frac{2}{1}\cdot\frac{2}{3}\cdot\frac{4}{3}\cdot\frac{4}{5}\cdot\frac{6}{5}\cdot\frac{6}{7}\cdots = \frac{\pi}{2}$$
 

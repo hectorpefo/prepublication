@@ -51,15 +51,15 @@ Pi comes into the picture because the [central binomial coefficient](https://en.
 
 $$\frac{2}{1}\cdot\frac{2}{3}\cdot\frac{4}{3}\cdot\frac{4}{5}\cdot\frac{6}{5}\cdot\frac{6}{7}\cdots = \frac{\pi}{2}$$
 
-This equation itself can be proven in [a really cool, demystifying way](https://www-tandfonline-com.stanford.idm.oclc.org/doi/abs/10.1080/00029890.2007.11920484) "using only the mathematics taught in elementary school, that is, basic algebra, the Pythagorean theorem, and the formula $\pi r^2$ for the area of a circle of radius r." Don Knuth walks us through Johan Wästlund's proof in a fun lecture called ["Why Pi?"](https://www.youtube.com/watch?v=cI6tt9QfRdo) that I definitely recommend viewing).
+This equation itself can be proven in [a really cool, demystifying way](https://www-tandfonline-com.stanford.idm.oclc.org/doi/abs/10.1080/00029890.2007.11920484) "using only the mathematics taught in elementary school, that is, basic algebra, the Pythagorean theorem, and the formula $\pi r^2$ for the area of a circle of radius $r$." Don Knuth walks us through Johan Wästlund's proof in a fun lecture called ["Why Pi?"](https://www.youtube.com/watch?v=cI6tt9QfRdo) that I definitely recommend viewing).
 
 It remains to evaluate the sum:
 
 $$\sum_{i=0}^N {2N-i \choose N} 2^i$$
 
-Think of this sum as an absurdly complex, but absolutely correct, way of answering the question, how many different heads/tails sequences are there for $2N$ flips of a coin?
+Think of this sum as an absurdly complex, but entirely correct, way of answering the question, how many different heads/tails sequences are there for $2N$ flips of a coin?
 
-At some point in any such sequence, between flips $N$ and $2N$ (inclusive), the greatest of the tallies of heads and tails is $N$ for the last time in the sequence. Suppose that happens at flip $2N-i$, when $i \neq 0$, with heads in the lead. There are ${2N-i} \choose N$ ways that the first $2N-i$ flips might have gone. Because this is the last flip with a leading tally of $N$, the next flip will be heads, after which there are $i-1$ flips that can turn out as you please. Thus there are ${2N-i \choose N}2^{i-1}$ ways for that to happen with heads in the lead and similarly for tails, for a total of ${2N-i \choose N}2^i$ ways. In the case of $i = 0$, there are also ${2N -i \choose N}2^i$ ways, corresponding to the ${2N \choose N}$ choices of flips to be heads. Thus, our sum counts all the heads/tails sequences of length $2N$, and of course there are $2^{2N}$, or $4^N$ such sequences, giving us a tidier way to express its value.
+At some point in any such sequence, somewhere between flips $N$ and $2N$ (inclusive), the greatest of the tallies of heads and tails is $N$ for the last time in the sequence. Suppose that happens at flip $2N-i$, when $i \neq 0$, with heads in the lead. There are ${2N-i} \choose N$ ways that the first $2N-i$ flips might have gone. Because this is the last flip with a leading tally of $N$, the next flip will be heads, after which there are $i-1$ flips that can turn out as you please. Thus there are ${2N-i \choose N}2^{i-1}$ ways for that to happen with heads in the lead and similarly for tails, for a total of ${2N-i \choose N}2^i$ ways. In the case of $i = 0$, there are also ${2N -i \choose N}2^i$ ways, corresponding to the ${2N \choose N}$ choices of flips to be heads. Thus, our sum counts all the heads/tails sequences of length $2N$, and of course there are $2^{2N}$, or $4^N$ of them, and so that's its value.
 
 It follows that $E(X) \sim \sqrt{\pi N}$, just as we noticed computationally. Cool, no?
 

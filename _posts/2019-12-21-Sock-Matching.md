@@ -27,9 +27,11 @@ $$E_i = \frac{i}{2N-i} + \frac{2N-2i}{2N-i} \cdot (1 + E_{i+1})$$
 
 This lets us calculate $E_i$ for any $i$, down to $E_0$, which is the overall expected number of pulled-out socks. In the case of $N=10$, it's about $5.68$ socks. 
 
+Because this approach doesn't require computing factorials, it's manageable to find the expectation for pretty large $N$. Doing so, we notice a pattern: the curve of $E$ versus $N$ looks like a scaled version of $\sqrt{N}$. Dividing the computed values of $E$ by $\sqrt{N}$, we find that, indeed, the ratio seems to approach a constant, which . . . is the square root of $\pi$! Why pi? Nothing about our recurrence relation seems to promise any insight into this, so we'll try a different approach.
+
 ### A combinatorial approach, and extra credit
 
-With $N$ pairs of socks in the drawer, we will calculate the expected value $E(X)$ of the random variable $X$, the number of pulls to yield the first pair. We will rely on the fact that for a non-negative, integer-valued random variable:
+With $N$ pairs of socks in the drawer, we will calculate the expected value $E(X)$ of the random variable $X$, the number of pulls to yield the first pair. We will rely on the useful fact that for a non-negative, integer-valued random variable:
 
 $$E(X) = \sum_{i=0}^\infty P(X > i)$$
 
@@ -41,16 +43,20 @@ Because the greatest $i$ for which $P(X>i)$ is non-zero is $N$:
 
 $$E(X) = {2N \choose N}^{-1}\sum_{i=0}^N {2N-i \choose N} 2^i$$
 
-It's a rather well-known fact that the [central binomial coefficient](https://en.wikipedia.org/wiki/Central_binomial_coefficient) $2N \choose N$ asymptotically approaches $4^N/\sqrt{\pi N}$. There is a nice [proof of that fact](https://www.moderndescartes.com/essays/2n_choose_n/) relying on elementary arithmetic supplemented by the [Wallis Product formula](https://en.wikipedia.org/wiki/Wallis_product) for $\pi$:
+It's a rather well-known fact that the [central binomial coefficient](https://en.wikipedia.org/wiki/Central_binomial_coefficient) $2N \choose N$ asymptotically approaches $4^N/\sqrt{\pi N}$. There is a nice [proof of that fact](https://www.moderndescartes.com/essays/2n_choose_n/) relying on just elementary math supplemented by the [Wallis Product formula](https://en.wikipedia.org/wiki/Wallis_product) for $\pi$:
 
 $$\frac{2}{1}\cdot\frac{2}{3}\cdot\frac{4}{3}\cdot\frac{4}{5}\cdot\frac{6}{5}\cdot\frac{6}{7}\cdots = \frac{\pi}{2}$$
 
-This equation itself can be proven in [a really cool, demystifying, and elementary way](https://www-tandfonline-com.stanford.idm.oclc.org/doi/abs/10.1080/00029890.2007.11920484) "using only the mathematics taught in elementary school, that is, basic algebra, the Pythagorean theorem, and the formula $\pi r^2$ for the area of a circle of radius r." Don Knuth exposits Johan Wästlund's proof in a [fun YouTube video](https://www.youtube.com/watch?v=cI6tt9QfRdo) that I definitely recommend viewing).
+This equation itself can be proven in [a really cool, demystifying way](https://www-tandfonline-com.stanford.idm.oclc.org/doi/abs/10.1080/00029890.2007.11920484) "using only the mathematics taught in elementary school, that is, basic algebra, the Pythagorean theorem, and the formula $\pi r^2$ for the area of a circle of radius r." Don Knuth walks us through Johan Wästlund's proof in a fun YouTube video called ["Why Pi?"](https://www.youtube.com/watch?v=cI6tt9QfRdo) that I definitely recommend viewing).
 
-It remains to evaluate the sum. Think of that sum as an absurdly complex, but absolutely correct, way of answering the question, how many sequences of heads and tails are possible in $2N$ flips of a coin?
+It remains to evaluate the sum:
 
-At some point in any such sequence, between flips $N$ and $2N$ (inclusive), the greatest of the tallies of heads and tails is $N$ for the last time in the sequence. Suppose that happens at flip $2N-i$, when $i \neq 0$. The next flip will be whichever of heads and tails has the tally of $N$, after which there are $i-1$ flips that can turn out as you please. Thus there are ${2N-i \choose N}2^{i-1}$ ways for that to happen with heads in the lead and similarly for tails, for a total of ${2N-1 \choose N}2^i$ ways. In the case of $i = 0$, there are also ${2N -i \choose N}2^i$ ways, corresponding to the ${2N \choose N}$ choices of flips to be heads. Thus, the sum counts all ways to flip a coin $2N$ times, and of course there are $2^{2N}$, or $4^N$ such ways, giving us the value of the sum.
+$$\sum_{i=0}^N {2N-i \choose N} 2^i$$
 
-Thus, we have $E(X) \sim \sqrt{\pi N}$ as $N \rightarrow \infty$. Cool, no?
+Think of this sum as an absurdly complex, but absolutely correct, way of answering the question, how many different heads/tails sequences are there for $2N$ flips of a coin?
+
+At some point in any such sequence, between flips $N$ and $2N$ (inclusive), the greatest of the tallies of heads and tails is $N$ for the last time in the sequence. Suppose that happens at flip $2N-i$, when $i \neq 0$. There are ${2N-i} \choose N$ ways that the first $2N-i$ flips might have gone. The next flip will be whichever of heads and tails has the tally of $N$, after which there are $i-1$ flips that can turn out as you please. Thus there are ${2N-i \choose N}2^{i-1}$ ways for that to happen with heads in the lead and similarly for tails, for a total of ${2N-1 \choose N}2^i$ ways. In the case of $i = 0$, there are also ${2N -i \choose N}2^i$ ways, corresponding to the ${2N \choose N}$ choices of flips to be heads. Thus, our sum counts all ways to flip a coin $2N$ times, and of course there are $2^{2N}$, or $4^N$ such ways, giving us a tidier way to express its value.
+
+It follows that $E(X) \sim \sqrt{\pi N}$, just as we noticed computationally. Cool, no?
 
 <br>

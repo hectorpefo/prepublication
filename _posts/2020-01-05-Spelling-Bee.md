@@ -64,22 +64,18 @@ for word in wordsList:
     if letters.issubset(pangramSets[i]):
       hiveWordLists[pangramTuples[i]].append(word)
 
-# Track the highest score so far: score, bee config [7-tuple,center letter]
-highestScore = [0,[]]
-
 # Score a bee: words are worth their length plus 7 for a pangram
 def score(pangramTuple,centerLetter):
   s = 0
   for word in hiveWordLists[pangramTuple]:
-    if not centerLetter in word:
-      continue
-    s += len(word)
-    if len(lettersIn(word)) == 7:
-      s += 7
+    if centerLetter in word:
+      s += len(word)
+      if len(lettersIn(word)) == 7:
+        s += 7
   return s
 
 # Score all bees, i.e., all pangram 7-tuples and all choices of center letter
-highestSoFar = [0,[]]
+highestSoFar = [0,[]] 
 for pangramTuple in pangramTuples:
   for centerLetter in pangramTuple:
     s = score(pangramTuple,centerLetter) 
@@ -187,7 +183,6 @@ print ""
 # triene  triennia  trier  trig  trigger  triggering  trigging  
 # trine  trining  trinitarian  trite  triter  
 # [Finished in 23.6s]
-
 ```
 
 <br>

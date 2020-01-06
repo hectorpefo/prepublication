@@ -20,6 +20,8 @@ This is a computational problem, so I'll let the code mostly speak for itself. A
 
 The code and output is supplied below. The winning bee, which produces 693 words for a score of 4,036, has letters AEGINRT, with R in the center.
 
+The Python coding was interesting to me (not a software person) partly because it was an exercise in managing the differences among three different data-structures that are collections of items: lists, tuples, and sets. Lists are ordered, alterable, and quickly addressable by index but not by member. Sets are unordered, immutable, and non-redundant, but quickly addressable by member (if you want to know whether an item is a member of a collection, a set is way speedier than a list). Tuples are ordered, immutable, quickly addressable by index but not by member, and able to serve as keys in dictionary objects (as are "frozen sets"). This task involved switching among the three as necessary for performance, logic, and programmical correctness.
+
 ```python
 # Find the highest possible score for the NYT Spelling Bee game, using a supplied
 # word list as the dictionary. Runs in 23.6sec in pypy (a fast way to run

@@ -90,7 +90,7 @@ print 'This bee has ', len(words), 'words:'
 answerList = []
 for word in words:
   if highestSoFar[1][1] in word:
-	  answerList.append(word)
+    answerList.append(word)
 for i in range(len(answerList)):
   if len(lettersIn(answerList[i])) == 7:
     print answerList[i].upper(), "",

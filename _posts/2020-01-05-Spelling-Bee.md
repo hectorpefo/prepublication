@@ -16,7 +16,7 @@ date: 2020-01-05
 
 ## Solution
 
-This is a computational problem, so I'll let the code mostly speak for itself. We find all sets of seven letters that yield pangrams, and then assign to each pangram-set a list of all the words that those letters can form. Finally, we score each bee that can be made from each pangram-set, and report the winner. This brute-force approach is feasible because there are "only" about 56,000 possible bees. The requirement that there be a pangram is what really constrains that number down from the millions that otherwise would be possible: there are about 8,000 7-letter (S-less) sets that yield pangrams.
+This is a computational problem, so I'll let the code mostly speak for itself. A brute-force approach is feasible because there are "only" about 56,000 possible bees. The requirement that there be at least one pangram is what really constrains that number down from the millions that otherwise would be possible. There are about 8,000 pangram-sets, and we only need to determine the words that are generable from each of them. Our approach, then, is to find all pangram-sets, and then to assign to each of them a list of all the words that can be formed from its letters. Finally, for each pangram-set we score the seven bees that can be made from it, and report the winner. The output is supplied below. The winning bee, which produces 693 words for a score of 4,036, contains letters AEGNIRT, with R in the center.
 
 ```python
 # Find the highest possible score for the NYT Spelling Bee game, using a supplied

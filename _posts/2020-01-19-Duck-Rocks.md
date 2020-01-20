@@ -54,6 +54,19 @@ Then, on an odd minute, the chance that all the ducks are at one rock is $1/4^{N
 
 $$\frac{2}{\frac{1}{4^{N-1}} + \frac{1}{3^N} + \frac{4}{6^N}}$$
 
-For small $N$, the simplification is significant. For $N = 2$, the correct expectation value of $4.90$ is estimated at $4.24$. But it gets better proportionately, though always underestimating as far as I can tell (now "actual" values are simulations with $100,000$ repetitions): for $N=3$, it's $16.9$ vs $18.4$; for $N+4$, it's $66.9$ vs $64.4$; for $N=5$, it's $237$ vs $234$.
+For small $N$, the simplification is significant. For $N = 2$, the correct expectation value of $4.90$ is estimated at $4.24$. But it gets better proportionately, though always underestimating as far as I can tell (now "actual" values are simulations with $100,000$ repetitions): 
+
+N | Estimate | 100K-rep Simulation
+-- | -- | -- 
+3 | 16.9 | 18.4
+4 | 64.4 | 66.9
+5 | 237 | 234
+6 | 822 | 822
+7 | 2795 | 
+8 | 9266 | 9271
+
+Since each duck has a $1/3$ chance of reaching the center rock on every even-numbered second, the estimate for the first time all the ducks meet at the center rock is $2\cdot3^N$. For large $N$, meeting on other rocks becomes vanishingly improbable.
+
+[Plots of estimated and simulated average meeting times and also $2 \cdot 3^N$ for N from 1 to 19. They converge.](/img/Ducks.png)
 
 <br>

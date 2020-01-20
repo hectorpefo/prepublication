@@ -48,7 +48,7 @@ This system can be solved straightforwardly by hand. Plugging the expressions fo
 
 ### Extra Credit
 
-For a larger number $N$ of ducks, we will use a simplification. We still think of the individual ducks as moving randomly among the rocks, alternating between sides and non-sides, but ignoring history otherwise. Each side rock is chosen $1/4$ of the time at odd minutes, Since the center has twice the number of adjacent side rocks as each corner, it is chosen $1/3$ of the time at even minutes, compared to $1/6$ for side rocks.
+For a larger number $N$ of ducks, I did not see a path to an exact expectation, so we will use a simplification. We still think of the individual ducks as moving randomly among the rocks, alternating between sides and non-sides, but ignoring history otherwise. Each side rock is chosen $1/4$ of the time at odd minutes, Since the center has twice the number of adjacent side rocks as each corner, it is chosen $1/3$ of the time at even minutes, compared to $1/6$ for corner rocks.
 
 Then, on an odd minute, the chance that all the ducks are at one rock is $1/4^{N-1}$, and on an even minute, the chance is $1/3^N + 4/6^N$. The average of these two values is our estimate of the probability that they will be on a single rock at a given minute, and the estimated expectation for the first such minute is its reciprocal, or:
 
@@ -62,10 +62,10 @@ N | Estimate | 100K-rep Simulation
 4 | 64.4 | 66.9
 5 | 237 | 234
 6 | 822 | 822
-7 | 2795 | 
+7 | 2795 | 2797
 8 | 9266 | 9271
 
-Since each duck has a $1/3$ chance of reaching the center rock on every even-numbered second, the estimate for the first time all the ducks meet at the center rock is $2\cdot3^N$. For large $N$, meeting on other rocks becomes vanishingly improbable.
+Since each duck has a $1/3$ chance of reaching the center rock on every even-numbered second, the estimate for the first time all the ducks meet at the center rock is $2\cdot3^N$. For large $N$, meeting on other rocks becomes vanishingly improbable compared to $2 \cdot 3^N$, and so that's the limiting expected meeting time.
 
 ![Plots of estimated and simulated average meeting times and also $2 \cdot 3^N$ for N from 1 to 19. They converge.](/img/Ducks.png)
 

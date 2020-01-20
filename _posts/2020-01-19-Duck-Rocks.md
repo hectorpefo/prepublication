@@ -67,6 +67,6 @@ N | Estimate | 100K-rep Simulation
 
 Since each duck has a $1/3$ chance of reaching the center rock on every even-numbered second, the estimate for the first time all the ducks meet at the center rock is $2\cdot3^N$. For large $N$, meeting on other rocks becomes vanishingly improbable.
 
-[Plots of estimated and simulated average meeting times and also $2 \cdot 3^N$ for N from 1 to 19. They converge.](/img/Ducks.png)
+![Plots of estimated and simulated average meeting times and also $2 \cdot 3^N$ for N from 1 to 19. They converge.](/img/Ducks.png)
 
 <br>

@@ -50,8 +50,10 @@ This system can be solved straightforwardly by hand. Plugging the expressions fo
 
 For a larger number $N$ of ducks, we will use a simplification. We still think of the individual ducks as moving randomly among the rocks, alternating between sides and non-sides, but ignoring history otherwise. Each side rock is chosen $1/4$ of the time at odd minutes, Since the center has twice the number of adjacent side rocks as each corner, it is chosen $1/3$ of the time at even minutes, compared to $1/6$ for side rocks.
 
-Then, on an odd minute, the chance that all the ducks are at one rock is $1/4^{N-1}$, and on an even minute, the chance is $1/3^N + 4/6^N$. The average of these two values is our estimate of the probability that they will be on a single rock at a given minute, and the expectation for the first such minute is its reciprocal, or:
+Then, on an odd minute, the chance that all the ducks are at one rock is $1/4^{N-1}$, and on an even minute, the chance is $1/3^N + 4/6^N$. The average of these two values is our estimate of the probability that they will be on a single rock at a given minute, and the estimated expectation for the first such minute is its reciprocal, or:
 
 $$\frac{2}{\frac{1}{4^{N-1}} + \frac{1}{3^N} + \frac{4}{6^N}}$$
+
+For small $N$, the simplification is significant. For $N = 2$, the correct expectation value of $4.90$ is estimated at $4.24$. But it gets better proportionately, though always underestimating as far as I can tell (now "actual" values are simulations with $100,000$ repetitions): for $N=3$, it's $16.9$ vs $18.4$; for $N+4$, it's $66.9$ vs $64.4$; for $N=5$, it's $237$ vs $234$.
 
 <br>

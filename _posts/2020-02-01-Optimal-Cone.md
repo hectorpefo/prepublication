@@ -38,7 +38,7 @@ $$ V = \frac{1}{3}Ah = \frac{1}{3} pN \tan^2{\frac{\pi}{N}} \cot{\frac{\pi}{pN}}
 
 For the original puzzle, we find that $V$ is maximized when $10$ tiles are used:
 
-![Plot of volume versus number of tiles used.](/img/ConeVolume.png)
+![Plot of volume versus number of tiles used.](/img/TenCone.png)
 
 As $N$ increases, the angles in the formula for $V$ decrease. For small $x$, $\tan{x}$ approaches $x$ and $\cot x$ approaches $\frac{1}{x}$, so:
 

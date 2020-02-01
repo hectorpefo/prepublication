@@ -15,11 +15,9 @@ date: 2020-02-11
 
 ![Picture of 8-sided cone with labeled dimensions.](/img/SampleCone.png)
 
-We'll generalize to any number ($3$ and above) of tiles, so that we can look at the limit.
+Suppose the tiles, of long dimension $1$, are such that they would form a flat $N$-gon (in the puzzle as given, $N$ is $12$). Let $x$ be half the short dimension, or $\tan{\frac{\pi}{N}}$.
 
-Suppose the pieces, of long dimension $1$, are such that they would form a flat $N$-gon (in the puzzle as given, $N$ is $12$). Then, let $x$ be half the short dimension, or $\tan{\frac{\pi}{N}}$.
-
-Suppose we form a pyramid with a proportion $p$ of the $N$ pieces. The base is a regular $pN$-gon with apothem $a$:
+If we form a pyramid with a proportion $p$ of the $N$ tiles, the base is a regular $pN$-gon with apothem $a$:
 
 $$a = x \cot{\frac{\pi}{pN}} = \tan{\frac{\pi}{N}}\cot{\frac{\pi}{pN}}$$
 
@@ -44,9 +42,9 @@ As $N$ increases, the angles in the formula for $V$ decrease. For small $x$, $\t
 
 $$ V \rightarrow \frac{\pi}{3} p^2 \sqrt{1-p^2}$$
 
-That looks suspiciously simple, and indeed there is a more direct way of reaching it. At the limit, the problem is equivalent to this: you have a paper disc out of which you cut a pie slice and form the remainder, which is a proportion $p$ of the circle, into a cone. For what value of $p$ do we maximize the cone's volume?
+That looks suspiciously simple, and indeed there is a more direct way of reaching it. At the limit, the problem is equivalent to this: you have a paper disc out of which you cut a pie slice and form the remainder, which is some proportion $p$ of the circle, into a cone. What value of $p$ maximizes the cone's volume?
 
-Let the circle's radius be $1$. Then the circumference of the cone's base is $2\pi p$, and so its radius $r$ is  $p$, and its area is $\pi p^2$. Its height is then $\sqrt{1-p^2}$ and so its volume is:
+Choose a circle with radius $1$. Then the circumference of the cone's base is $2\pi p$, and so its radius is $p$, and its area is $\pi p^2$. Its height is then $\sqrt{1-p^2}$ and so its volume is:
 
 $$V = \frac{\pi}{3}p^2 \sqrt{1-p^2}$$
 
@@ -54,13 +52,13 @@ To find the maximum of this function of $p$:
 
 $$ \frac{d}{dp^2} (p^2 \sqrt{1-p^2}) = 0$$
 
-Using the product rule and chain rule,
+Using the product and chain rules for differentiation,
 
 $$ \sqrt{1-p^2} - \frac{p^2}{2\sqrt{1-p^2}} = 0$$
 
 $$p = \sqrt{\frac{2}{3}}$$
 
-So $V$ attains its maximum value of $\frac{2\pi}{9\sqrt{3}}$ (about $.403$) at $p = \sqrt{2/3}$ (about $.812$). Note that this fraction of $12$ is about $9.74$, the closest integer to which is as we might expect our answer of $10$.
+So $V$ attains its maximum value of $\frac{2\pi}{9\sqrt{3}}$ (about $.403$) at $p = \sqrt{2/3}$ (about $.812$). Note that this fraction of $12$ is about $9.74$, the closest integer to which is, as we might expect, our observed optimal tile-count of $10$.
 
 $V$ versus $p$:
 

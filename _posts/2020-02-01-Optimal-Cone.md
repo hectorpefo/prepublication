@@ -13,7 +13,7 @@ date: 2020-02-11
 
 ## Solution
 
-[Picture of 8-sided cone with labeled dimensions.](/img/SampleCone.png)
+![Picture of 8-sided cone with labeled dimensions.](/img/SampleCone.png)
 
 We'll generalize to any number ($3$ and above) of tiles, so that we can look at the limit.
 

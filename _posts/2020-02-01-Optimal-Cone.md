@@ -21,13 +21,13 @@ If we form a pyramid with a proportion $p$ of the $N$ tiles, the base is a regul
 
 $$a = x \cot{\frac{\pi}{pN}} = \tan{\frac{\pi}{N}}\cot{\frac{\pi}{pN}}$$
 
-The area of the base:
-
-$$A = pNxa = pN\tan^2{\frac{\pi}{N}}\cot{\frac{\pi}{pN}}$$
-
 The height of the pyramid:
 
 $$ h = \sqrt{1 - a^2} = \sqrt{1 - \tan^2{\frac{\pi}{N}}\cot^2{\frac{\pi}{pN}}}$$
+
+The area of the base:
+
+$$A = pNxa = pN\tan^2{\frac{\pi}{N}}\cot{\frac{\pi}{pN}}$$
 
 Finally, its volume:
 

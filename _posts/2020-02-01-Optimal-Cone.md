@@ -44,13 +44,13 @@ $$ V \rightarrow \frac{\pi}{3} p^2 \sqrt{1-p^2}$$
 
 That looks suspiciously simple, and indeed there is a more direct way of reaching it. At the limit, the problem is equivalent to this: you have a paper disc out of which you cut a pie slice and form the remainder, which is some proportion $p$ of the circle, into a cone. What value of $p$ maximizes the cone's volume?
 
-Choose a circle with radius $1$. Then the circumference of the cone's base is $2\pi p$, and so its radius is $p$, and its area is $\pi p^2$. Its height is then $\sqrt{1-p^2}$ and so its volume is:
+Choose a disc with radius $1$. Then the circumference of the cone's base is $2\pi p$, and so its radius is $p$, and its area is $\pi p^2$. Its height is then $\sqrt{1-p^2}$ and so its volume is:
 
 $$V = \frac{\pi}{3}p^2 \sqrt{1-p^2}$$
 
 To find the maximum of this function of $p$:
 
-$$ \frac{d}{dp^2} (p^2 \sqrt{1-p^2}) = 0$$
+$$ \frac{d}{dp^2} \left( p^2 \sqrt{1-p^2} \right) = 0$$
 
 Using the product and chain rules for differentiation,
 

@@ -58,7 +58,7 @@ $$ \sqrt{1-p^2} - \frac{p^2}{2\sqrt{1-p^2}} = 0$$
 
 $$p = \sqrt{\frac{2}{3}}$$
 
-So $V$ attains its maximum value of $\frac{2\pi}{9\sqrt{3}}$ (about $.403$) at $p = \sqrt{2/3}$ (about $.812$). Note that this fraction of $12$ is about $9.74$, the closest integer to which is, as we might expect, our observed optimal tile-count of $10$.
+So $V$ attains its maximum value of $\frac{2\pi}{9\sqrt{3}}$ (about $.403$) at $p = \sqrt{\frac{2}{3}}$ (about $.812$). Note that this fraction of $12$ is about $9.74$, the closest integer to which is, as we might expect, our observed optimal tile-count of $10$.
 
 $V$ versus $p$:
 

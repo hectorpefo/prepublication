@@ -19,7 +19,7 @@ We'll generalize to any number ($3$ and above) of tiles, so that we can look at 
 
 Suppose the pieces, of long dimension $1$, are such that they would form a flat $N$-gon (in the puzzle as given, $N$ is $12$). Then, let $x$ be half the short dimension, or $\tan{\frac{\pi}{N}}$.
 
-Suppose we form a pyramid with a proportion $p$ of the $N$ pieces. The base is an $pN$-gon with apothem $a$:
+Suppose we form a pyramid with a proportion $p$ of the $N$ pieces. The base is a regular $pN$-gon with apothem $a$:
 
 $$a = x \cot{\frac{\pi}{pN}} = \tan{\frac{\pi}{N}}\cot{\frac{\pi}{pN}}$$
 

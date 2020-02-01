@@ -7,6 +7,10 @@ date: 2020-02-11
 
 >Robert’s daughter has a set of Magna-Tiles, which, as their name implies, are tiles with magnets on the edges that can be used to build various polygons and polyhedra. Some of the tiles are identical isosceles triangles with one 30 degree angle and two 75 degree angles. If you were to arrange 12 of these tiles with their 30 degree angles in the center, they would lay flat and form a regular dodecagon. If you were to put fewer (between three and 11) of those tiles together in a similar way, they would form a pyramid whose base is a regular polygon. If Robert wanted to maximize the volume contained within the resulting pyramid (presumably to store as much candy for his daughter as possible), how many tiles should he use?
 
+<!--more-->
+
+([fivethirtyeight](https://fivethirtyeight.com/features/can-you-roll-the-perfect-bowl/))
+
 ## Solution
 
 We'll generalize to any number ($3$ and above) of tiles, so that we can look at the limit.

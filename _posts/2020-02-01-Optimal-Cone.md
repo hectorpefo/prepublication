@@ -13,6 +13,8 @@ date: 2020-02-11
 
 ## Solution
 
+[Picture of 8-sided cone with labeled dimensions.](/img/SampleCone.png)
+
 We'll generalize to any number ($3$ and above) of tiles, so that we can look at the limit.
 
 Suppose the pieces, of long dimension $1$, are such that they would form a flat $N$-gon (in the puzzle as given, $N$ is $12$). Then, let $x$ be half the short dimension, or $\tan{\frac{\pi}{N}}$.
@@ -59,6 +61,8 @@ $$ \sqrt{1-p^2} - \frac{p^2}{2\sqrt{1-p^2}} = 0$$
 $$p = \sqrt{\frac{2}{3}}$$
 
 So $V$ attains its maximum value of $\frac{2\pi}{9\sqrt{3}}$ (about $.403$) at $p = \sqrt{2/3}$ (about $.812$). Note that this fraction of $12$ is about $9.74$, the closest integer to which is as we might expect our answer of $10$.
+
+$V$ versus $p$:
 
 ![Plot of volume versus proportion of circle retained.](/img/ConeVolume.png)
 

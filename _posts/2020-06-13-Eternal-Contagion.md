@@ -36,7 +36,7 @@ $$
 As $n \rightarrow \infty$, $(F(n+1) - F(n)) \rightarrow 0$, and given the continuity of $F$:
 
 $$F(P(E)) = F(lim_{n \rightarrow \infty}P(E_n)}) 
-= lim_{n \rightarrow \infty}F(P(E_n))} = P(E)$$
+= lim_{n \rightarrow \infty}F(P(E_n)) = P(E)$$
 
 That gives us a quadratic equation in $P(E)$:
 

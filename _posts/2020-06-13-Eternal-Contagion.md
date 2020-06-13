@@ -51,9 +51,13 @@ $$0 \leq q$$
 Since $F$ is an increasing function, it follows that:
 
 $$F(0) \leq F(q) = q$$
+
 $$F(F(0)) \leq F(q) = q$$
+
 $$\cdots$$
+
 $$ F(F(\ldots F(0)\ldots) \leq q $$
+
 $$ P(E) \leq q $$
 
 Thus $P(E)$ cannot be the strictly greater solution (i.e., $1$) and hence must be $\frac{1}{p}-1$, and so the probability of eternal survival is $2 - \frac{1}{p}$.

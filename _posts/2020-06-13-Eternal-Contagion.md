@@ -15,7 +15,15 @@ date: 2020-06-13
 
 ## Solution
 
-Let $E_n$ be the event of there being extinction as of (or before) generation $n$. Then $P(E_0)$ is $0$, $P(E_1)$ is $(1-p)$, and since $E_{n+1}$ is equivalent to the disjunctive event of $E_1$ (going extinct immediately) and the negation of $E_1$ (having two offspring) followed by two instances of $E_{n}$:
+Let $E$ be the event of eventual extinction. Eventual extinction is equivalent to the disjunctive event of either immediate extinction (with probability $(1-p)$), or (with probability $p$) an initial two offspring, both of whose lineages go extinct (with probability $P(E)^2$). This yields a quadratic equation in $P(E)$, namely:
+
+$$P(E) = (1-p) + pP(E)^2$$
+
+For $p < .5$, this has two solutions, only one of which is in range: extinction with probability $1$.
+
+For $p>.5$, there are also two solutions, namely $1$ and $\frac{1}{p} - 1$, which is less than $1$ for these values of $p$. It turns out that the correct probability is the latter. But it will take a little work to show that.
+
+Let $E_n$ be the event of there being extinction as of (or before) generation $n$. Then $P(E_0)$ is $0$, $P(E_1)$ is $(1-p)$, and (this will sound familiar) since $E_{n+1}$ is equivalent to the disjunctive event of $E_1$ (going extinct immediately) and the negation of $E_1$ (having two offspring) followed by two instances of $E_{n}$:
 
 $$P(E_{n+1}) = (1-p) + pP(E_{n})^2$$
 
@@ -25,26 +33,15 @@ $$F(x) = (1-p) + px^2$$
 
 So:
 
-$$P(E_n) = F(F(\ldots F(0)\ldots)$$
+$$P(E_n) = F^n(0)$$
 
-where there are $n$ occurrences of $F$ (I will leave this unsaid henceforth). Where $E$ is the event of there eventually being extinction, we can see that $P(E)$ is a fixed point of $F$:
+(where $F^n(0)$ means $n$ nested applications of the function $F$.)
 
-$$P(E) = lim_{n \rightarrow \infty} P(E_n) = 
-lim_{n \rightarrow \infty} F(F(\ldots F(0)\ldots)
-$$
+Call the other solution to our quadratic equation for $p > .5$, besides $P(E)$, whichever it may be ($1$ or $1-\frac{1}{p}$), $q$. Since $q$ is a solution, we know that:
 
-As $n \rightarrow \infty$, $(F(n+1) - F(n)) \rightarrow 0$, and given the continuity of $F$:
+$$F(q) = q$$
 
-$$F(P(E)) = F(lim_{n \rightarrow \infty}P(E_n)) 
-= lim_{n \rightarrow \infty}F(P(E_n)) = P(E)$$
-
-That gives us a quadratic equation in $P(E)$:
-
-$$P(E) = (1-p) + pP(E)^2$$
-
-For $p < .5$, this has two solutions, only one of which is in range: extinction with probability $1$.
-
-For $p>.5$, there are also two solutions, namely $1$ and $\frac{1}{p} - 1$, which is less than $1$. Call the other solution, besides $P(E)$, whichever it may be, $q$. Now:
+Now:
 
 $$0 \leq q$$
 
@@ -56,7 +53,9 @@ $$F(F(0)) \leq F(q) = q$$
 
 $$\cdots$$
 
-$$ F(F(\ldots F(0)\ldots) \leq q $$
+$$ F^n(0) \leq q $$
+
+$$ lim_{n \rightarrow \infty} F^n(0) \leq q$$
 
 $$ P(E) \leq q $$
 

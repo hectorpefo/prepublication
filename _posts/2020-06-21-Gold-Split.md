@@ -13,9 +13,9 @@ date: 2020-06-21
 
 ## Solution
 
-I took not only a merely computational approach, but a brute-force one to boot: for each number $K$ of kids, we step through numbers $N$ of spheres, and we report the first $N$ such that the set of the first $N$ cubes can be partitioned into $K$ equal-sum subsets.
+My approach is not only computational, but pretty brute-force to boot: for each number $K$ of subsets, we step through the sets of the first $N$ cubes, and search the tree of partial assignments of cubes to partitions until we find a complete assignment to $K$ same-sum subsets.
 
-On my machine, we find the solution for $K$ up to $8$ in about $72$ minutes: $1, 12, 23, 24, 24, 35, 41, 47$.
+On my PC, this code finds the solution for $K$ up to $8$ in about $72$ minutes: $1, 12, 23, 24, 24, 35, 41, 47$.
 
 I'll be curious to see if there are analytic approaches to this, or at least more efficient computational ones.
 

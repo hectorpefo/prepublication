@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Catch-Yertle
+title: Catch Yertle
 date: 2020-07-17
 ---
 

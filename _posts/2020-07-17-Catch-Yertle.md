@@ -25,7 +25,7 @@ We'll change units every minute so that the distance remains $10$. What does cha
 
 $$v_t = \prod_{i=1}^t \frac{i}{i+1} = \frac{1}{t+1}$$
 
-Letting $T_t$ be the position of the tortoise at the end of minute $t$ (just before the stretch), we have:
+Letting $T_t$ be the position of the tortoise at the end of minute $t$, we have:
 
 $$T_0 = 0$$
 
@@ -35,6 +35,6 @@ $$T_{t} = \sum_{i=1}^t \frac{1}{i}$$
 
 Thus the tortoise's positions at integer minutes form the partial sums of the [harmonic series](https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)), which are also called harmonic numbers. Since the harmonic numbers grow approximately logarithmically, we know that the tortoise will get to $10$ miles eventually. 
 
-This happens (very) shortly before the end of minute $12367$ (the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080)). So we'll time the hare's departure to reach the line at that time. Relying on the fact that the hare's velocity is always $\frac{5}{4}$ times that of the tortoise, and allowing for starting between integer minutes (which is important because a great deal of speed is lost in the early minutes), we find computationally that the hare should start when $4$ minutes and $28.80$ seconds have elapsed. The race ends, tied, after about $8$ days, $14$ hours and $8$ minutes.
+This happens shortly before the end of minute $12367$ (the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080)). So we'll time the hare's departure to reach the line at that time. Relying on the fact that the hare's velocity is always $\frac{5}{4}$ times that of the tortoise, and allowing for starting between integer minutes (which is important because a great deal of speed is lost in the early minutes), we find computationally that the hare should start when $4$ minutes and $28.80$ seconds have elapsed. The race ends, tied, after about $8$ days, $14$ hours and $7$ minutes.
 
 <br>

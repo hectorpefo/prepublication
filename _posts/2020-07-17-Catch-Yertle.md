@@ -21,7 +21,7 @@ date: 2020-07-17
 
 ## Solution
 
-We'll change units every minute so that the distance remains $10$. What does change is that at minute $t$, each runner's pace is reduced by the multiplicative factor $\frac{t}{t+1}$. So between times $t$ and $t+1$, the tortoise's pace is:
+The key effect of the growing road is that it decreases the runners' velocities relative to the road's length. So we can equivalently consider a constant-length road with periodically diminishing velocities: at (integer) minute $t$, each runner's pace is reduced by the multiplicative factor $\frac{t}{t+1}$. So between times $t$ and $t+1$, the tortoise's pace is:
 
 $$v_t = \prod_{i=1}^t \frac{i}{i+1} = \frac{1}{t+1}$$
 

@@ -21,7 +21,7 @@ date: 2020-07-17
 
 ## Solution
 
-The key effect of the growing road is that it decreases the runners' velocities relative to the road's length. For instance, the tortoise runs at $1$ mile per minute, or, equivalently, $1$ tenth of a road-length per minute. After the first minute, the pace still is $1$ mile per minute, but now is $.5$ tenths of a a road-length per minute. So we can equivalently consider an unchanging, ten-mile road with diminishing velocities: at (integer) minute $m$, each runner's pace is reduced by the multiplicative factor $\frac{m}{m+1}$. So between times $m$ and $m+1$, the tortoise's pace in miles per minute is:
+The key effect of the growing road is that it decreases the runners' velocities relative to the road's length. For instance, the tortoise runs at $1$ mile per minute, or, equivalently, $1$ tenth of a road-length per minute. After the first minute, the pace still is $1$ mile per minute, but now is half of a tenth of a a road-length per minute. So we can equivalently consider an unchanging, ten-mile road with diminishing velocities: at (integer) minute $m$, each runner's pace is reduced by the multiplicative factor $\frac{m}{m+1}$. So between times $m$ and $m+1$, the tortoise's pace in miles per minute is:
 
 $$v_m = \prod_{i=1}^m \frac{i}{i+1} = \frac{1}{m+1}$$
 
@@ -39,7 +39,7 @@ When the hare is running, its pace is always $5/4$ of that of the tortoise, and 
 
 The least harmonic number greater than or equal to $2$ is the fourth, namely $25/12$, and so the tortoise will reach mile $2$ in under $4$ minutes. Since the tortoise has been running at $1/4$ mile per minute at that point, the time it takes to get from $2$ miles to $25/12$ miles is $(1/12)/(1/4)$, or $1/3$ of a minute. Therefore the hare must start running at $3$ minutes and $40$ seconds into the race. 
 
-We can calculate the total race duration in the same way. The [the least harmonic number greater than or equal to $10$](https://oeis.org/A004080)is $H_12367$, and the tortoise has been running at $1/12367$ miles per minute. So the race duration is:
+We can calculate the total race duration in the same way. As can be computed easily (or [looked up](https://oeis.org/A004080)), the least harmonic number greater than or equal to $10$ is $H_{12367}$, and at minute $12367$, the tortoise has been running at $1/12367$ miles per minute. So the race duration is:
 
 $$12367 - \frac{H_{12367} - 10}{\frac{1}{12367}} \approx 12366.468$$
 

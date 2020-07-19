@@ -37,6 +37,8 @@ Thus the tortoise's positions at integer minutes form the partial sums of the [h
 
 This happens during minute $12367$ (the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080)). Going computational (see below), we find that the tortoise finishes more precisely on day $8$, after $14$ hours, $6$ minutes, and about $28.09$ seconds. So we'll time the hare's departure to reach the line at that time as well. We find that the hare should start when $3$ minutes and $35$ seconds have elapsed.
 
+Code (Python):
+
 ```python
 # Tortoise runs at a pace of 1/minute (mi/min), where minute
 # is the next integer minute.

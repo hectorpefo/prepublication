@@ -56,7 +56,7 @@ tortoise_finish_time = minute - (distance - 10) / (1/minute)
 # desired precision.
 
 desiredPrecision = 1/60000000 # one microsecond
-startDelta = 1/60 # start with 1sec precision
+startDelta = 1/60 # start with 1sec steps for the hare's start time.
 start = 0
 while True:
 	while True:
@@ -78,6 +78,7 @@ while True:
 	if hare_finish_time - tortoise_finish_time <= desiredPrecision:
 		hare_start_time = start
 		break
+	# Scoot back across the target start-time value and get finer-grained
 	start -= startDelta
 	startDelta /= 10
 

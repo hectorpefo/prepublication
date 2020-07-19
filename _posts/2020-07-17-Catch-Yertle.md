@@ -88,6 +88,8 @@ print("Hare starts at",
 	str(timedelta(minutes=hare_start_time)),
 	"and finishes in", 
 	str(timedelta(minutes=hare_finish_time)))
+print("Precision of hare start time is",
+	startDelta*60,"seconds")
 
 ```
  Output:

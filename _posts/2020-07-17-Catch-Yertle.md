@@ -82,5 +82,12 @@ print("Hare starts at",
 	" and finishes in", 
 	str(timedelta(minutes=hare_finish_time)))
 ```
+ Output:
+
+ ```
+ Tortoise finishes in 8 days, 14:06:28.086999
+Hare starts at 0:03:35  and finishes in 8 days, 14:06:28.087989
+[Finished in 0.3s]
+```
 
 <br>

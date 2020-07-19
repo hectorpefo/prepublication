@@ -49,10 +49,10 @@ while distance < 10:
 # adjust for overshooting 10mi
 tortoise_finish_time = minute - (distance - 10) / (1/minute)
 
-# Hare runs at 1.25/minute similarly. We tweak his start time 
-# (h0) until his finish time matches Tortoise's. We identify
+# Hare runs at 1.25/minute similarly. We loop over start times 
+# (h0) until the finish time matches Tortoise's. We identify
 # the ballpark with a coarse h0Delta, and then manually refine 
-# as we start with a h0 near the actual value.
+# as we start with an h0 near the actual value, as here:
 
 h0Delta = 1/100000000
 h0 = 3.58333
@@ -81,7 +81,6 @@ print("Hare starts at",
 	str(timedelta(minutes=hare_start_time)),
 	" and finishes in", 
 	str(timedelta(minutes=hare_finish_time)))
-
 ```
 
 <br>

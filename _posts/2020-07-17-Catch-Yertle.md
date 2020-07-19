@@ -35,7 +35,7 @@ $$T_{m} = \sum_{i=1}^m \frac{1}{i}$$
 
 Thus the tortoise's positions at integer minutes form the partial sums of the [harmonic series](https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)), which are also called harmonic numbers. Since the harmonic numbers grow approximately logarithmically, we know that the tortoise will get to $10$ miles eventually. 
 
-That this happens during minute $12367$ follows from the fact that the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080). Computationally, we find that the tortoise finishes more precisely on day $8$, after $14$ hours, $6$ minutes, and about $28.09$ seconds. So we'll time the hare's departure to reach the line at that time as well. We find that the hare should start when $3$ minutes and $35$ seconds have elapsed.
+That this happens during minute $12367$ follows from the fact that the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080). Computationally, we find that the tortoise finishes after $8$ days, $14$ hours, $6$ minutes, and about $28.087$ seconds. So we'll time the hare's departure to reach the line at that time as well. We find that the hare should start when $3$ minutes and $35$ seconds have elapsed.
 
 Code (Python):
 
@@ -48,7 +48,7 @@ distance = 0
 while distance < 10:
 	minute += 1
 	distance += 1/minute
-# adjust for overshooting 10mi
+# That will give us minute = 12367. Now adjust for overshooting 10mi.
 tortoise_finish_time = minute - (distance - 10) / (1/minute)
 
 # Hare runs at 1.25/minute similarly. We tweak his start time 

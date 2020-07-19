@@ -35,6 +35,53 @@ $$T_{t} = \sum_{i=1}^t \frac{1}{i}$$
 
 Thus the tortoise's positions at integer minutes form the partial sums of the [harmonic series](https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)), which are also called harmonic numbers. Since the harmonic numbers grow approximately logarithmically, we know that the tortoise will get to $10$ miles eventually. 
 
-This happens shortly before the end of minute $12367$ (the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080)). So we'll time the hare's departure to reach the line at that time. Relying on the fact that the hare's velocity is always $\frac{5}{4}$ times that of the tortoise, and allowing for starting between integer minutes (which is important because a great deal of speed is lost in the early minutes), we find computationally that the hare should start when $4$ minutes and $28.80$ seconds have elapsed. The race ends, tied, after about $8$ days, $14$ hours and $7$ minutes.
+This happens during minute $12367$ (the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080)). Going computational (see below), we find that the tortoise finishes more precisely on day $8$, after $14$ hours, $6$ minutes, and about $28.09$ seconds. So we'll time the hare's departure to reach the line at that time as well. We find that the hare should start when $3$ minutes and $35$ seconds have elapsed.
+
+```python
+# Tortoise runs at a pace of 1/minute (mi/min), where minute
+# is the next integer minute.
+
+minute = 0
+distance = 0
+while distance < 10:
+	minute += 1
+	distance += 1/minute
+# adjust for overshooting 10mi
+tortoise_finish_time = minute - (distance - 10) / (1/minute)
+
+# Hare runs at 1.25/minute similarly. We tweak his start time 
+# (h0) until his finish time matches Tortoise's. We identify
+# the ballpark with a coarse h0Delta, and then manually refine 
+# as we start with a h0 near the actual value.
+
+h0Delta = 1/100000000
+h0 = 3.58333
+while True:
+	if h0 != int(h0):
+		# progress to next integer minute
+		distance = (1/(int(h0) + 1)) * (1 - (h0 - int(h0)))
+		minute = int(h0) + 1
+	else:
+		distance = 0
+		minute = h0
+	while distance < 10:
+		minute += 1
+		distance += 1.25/minute
+	# same correction for overshooting
+	hare_finish_time = minute - (distance - 10) / (1.25/minute)
+	if hare_finish_time >= tortoise_finish_time:
+		hare_start_time = h0
+		break
+	h0 += h0Delta
+
+from datetime import timedelta
+print("Tortoise finishes in",
+	str(timedelta(minutes=tortoise_finish_time)))
+print("Hare starts at",
+	str(timedelta(minutes=hare_start_time)),
+	" and finishes in", 
+	str(timedelta(minutes=hare_finish_time)))
+
+```
 
 <br>

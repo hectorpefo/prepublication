@@ -21,21 +21,21 @@ date: 2020-07-17
 
 ## Solution
 
-The key effect of the growing road is that it decreases the runners' velocities relative to the road's length. So we can equivalently consider a constant-length, ten-mile road with periodically diminishing velocities: at (integer) minute $t$, each runner's pace is reduced by the multiplicative factor $\frac{t}{t+1}$. So between times $t$ and $t+1$, the tortoise's pace in miles per minute is:
+The key effect of the growing road is that it decreases the runners' velocities relative to the road's length. For instance, the tortoise runs at $1$ mile per minute, or, equivalently, $1$ tenth of a road-length per minute. After the first minute, the pace still is $1$ mile per minute, but now is $.5$ tenths of a a road-length per minute. So we can equivalently consider an unchanging, ten-mile road with diminishing velocities: at (integer) minute $m$, each runner's pace is reduced by the multiplicative factor $\frac{m}{m+1}$. So between times $m$ and $m+1$, the tortoise's pace in miles per minute is:
 
-$$v_t = \prod_{i=1}^t \frac{i}{i+1} = \frac{1}{t+1}$$
+$$v_m = \prod_{i=1}^m \frac{i}{i+1} = \frac{1}{m+1}$$
 
-Letting $T_t$ be the position of the tortoise at the end of minute $t$, we have:
+Letting $T_m$ be the position of the tortoise at the end of minute $m$, we have:
 
 $$T_0 = 0$$
 
-$$T_{t+1} = T_t + v_t$$
+$$T_{m+1} = T_t + v_m$$
 
-$$T_{t} = \sum_{i=1}^t \frac{1}{i}$$
+$$T_{m} = \sum_{i=1}^m \frac{1}{i}$$
 
 Thus the tortoise's positions at integer minutes form the partial sums of the [harmonic series](https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)), which are also called harmonic numbers. Since the harmonic numbers grow approximately logarithmically, we know that the tortoise will get to $10$ miles eventually. 
 
-This happens during minute $12367$ (the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080)). Going computational (see below), we find that the tortoise finishes more precisely on day $8$, after $14$ hours, $6$ minutes, and about $28.09$ seconds. So we'll time the hare's departure to reach the line at that time as well. We find that the hare should start when $3$ minutes and $35$ seconds have elapsed.
+That this happens during minute $12367$ follows from the fact that the $12367$th harmonic number is [the first to exceed $10$](https://oeis.org/A004080). Computationally, we find that the tortoise finishes more precisely on day $8$, after $14$ hours, $6$ minutes, and about $28.09$ seconds. So we'll time the hare's departure to reach the line at that time as well. We find that the hare should start when $3$ minutes and $35$ seconds have elapsed.
 
 Code (Python):
 
@@ -51,44 +51,50 @@ while distance < 10:
 # adjust for overshooting 10mi
 tortoise_finish_time = minute - (distance - 10) / (1/minute)
 
-# Hare runs at 1.25/minute similarly. We loop over start times 
-# (h0) until the finish time matches Tortoise's. We identify
-# the ballpark with a coarse h0Delta, and then manually refine 
-# as we start with an h0 near the actual value, as here:
+# Hare runs at 1.25/minute similarly. We tweak his start time 
+# (start) until his finish time matches Tortoise's to our
+# desired precision.
 
-h0Delta = 1/100000000
-h0 = 3.58333
+desiredPrecision = 1/60000000 # one microsecond
+startDelta = 1/60 # start with 1sec precision
+start = 0
 while True:
-	if h0 != int(h0):
-		# progress to next integer minute
-		distance = (1/(int(h0) + 1)) * (1 - (h0 - int(h0)))
-		minute = int(h0) + 1
-	else:
-		distance = 0
-		minute = h0
-	while distance < 10:
-		minute += 1
-		distance += 1.25/minute
-	# same correction for overshooting
-	hare_finish_time = minute - (distance - 10) / (1.25/minute)
-	if hare_finish_time >= tortoise_finish_time:
-		hare_start_time = h0
+	while True:
+		if start != int(start):
+			# progress to next integer minute
+			distance = (1/(int(start) + 1)) * (1 - (start - int(start)))
+			minute = int(start) + 1
+		else:
+			distance = 0
+			minute = start
+		while distance < 10:
+			minute += 1
+			distance += 1.25/minute
+		# same correction for overshooting
+		hare_finish_time = minute - (distance - 10) / (1.25/minute)
+		if hare_finish_time > tortoise_finish_time:
+			break
+		start += startDelta
+	if hare_finish_time - tortoise_finish_time <= desiredPrecision:
+		hare_start_time = start
 		break
-	h0 += h0Delta
+	start -= startDelta
+	startDelta /= 10
 
 from datetime import timedelta
 print("Tortoise finishes in",
 	str(timedelta(minutes=tortoise_finish_time)))
 print("Hare starts at",
 	str(timedelta(minutes=hare_start_time)),
-	" and finishes in", 
+	"and finishes in", 
 	str(timedelta(minutes=hare_finish_time)))
+
 ```
  Output:
 
- ```
- Tortoise finishes in 8 days, 14:06:28.086999
-Hare starts at 0:03:35  and finishes in 8 days, 14:06:28.087989
+```
+Tortoise finishes in 8 days, 14:06:28.086999
+Hare starts at 0:03:35 and finishes in 8 days, 14:06:28.086999
 [Finished in 0.3s]
 ```
 

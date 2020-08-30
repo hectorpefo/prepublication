@@ -25,9 +25,9 @@ M(\mathbf{a^p}) W(\mathbf{a^p},\mathbf{a})$$
 
 Suppose we're calculating $M(3,3,1,2)$. One possible preceding state is $(4,3,2,2)$. To get to the new state without matching, we can choose any of the $6$ cards in the three-of-the-value group and any of the $6$ in the two-of-the-value group, and distribute these two cards in either of the two possible ways. So the number of ways of arriving match-freely at $(3,3,1,2)$ having previously been at $(4,3,2,2)$ is $72 \cdot M(4,3,3,2)$.
 
-The code below does this for every possible match-free deal. I believe (or hope) that it is correct. But unfortunately, even though it is not so brute-force as to enumerate all match-free deals, it is too inefficient to produce an answer in a reasonable runtime. Hey, we're doing mathematics, not engineering? It at least clarifies the functions $P$ and $W$.
+The code below does this for every possible match-free deal. I believe (or hope) that it is correct. But unfortunately, even though it is not so brute-force as to enumerate all match-free deals, it is too inefficient to produce an answer in a reasonable runtime. Hey, we're doing mathematics, not engineering? If correct, it gives you the answer in nothing flat when run, in the words of the late Jon Barwise, at the speed of logic. It at least clarifies the functions $P$ and $W$.
 
-The expectation seems to be roughly proportional to the log of the number of card values in the deck. Projecting on that basis, we might expect about 165,718,000 deals before a match-free game with a standard deck. Maybe that's a worthy echo of Euler's amazing result about [the Game of Coincidence](http://eulerarchive.maa.org/hedi/HEDI-2004-09.pdf).
+The expectation seems to be roughly proportional to the log of the number of card values in the deck. Projecting on that basis, we might expect about 165,718,000 deals before a match-free game with a standard deck. Maybe that's a worthy echo of Euler's amazing result about the somewhat similar, but apparently importantly different, [Game of Coincidence](http://eulerarchive.maa.org/hedi/HEDI-2004-09.pdf).
 
 ![straightish-line plot with log y-axis](/img/PerfectWar.jpg)
 

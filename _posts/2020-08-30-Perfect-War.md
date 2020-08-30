@@ -21,7 +21,7 @@ We can calculate values of $M(\mathbf{a})$ from those of $M$ at preceding states
 
 $$M(\mathbf{a}) =
 \sum_{\mathbf{a^p} \in P(\mathbf{a})} 
-M(a^p) W(\mathbf{a^p},\mathbf{a})$$
+M(\mathbf{a^p}) W(\mathbf{a^p},\mathbf{a})$$
 
 Suppose we're calculating $M(3,3,1,2)$. One possible preceding state is $(4,3,2,2)$. To get to the new state without matching, we can choose any of the $6$ cards in the three-of-the-value group and any of the $6$ in the two-of-the-value group, and distribute these two cards in either of the two possible ways. So the number of ways of arriving matchlessly at $(3,3,1,2)$ having previously been at $(4,3,2,2)$ is $72 \cdot M(4,3,3,2)$.
 

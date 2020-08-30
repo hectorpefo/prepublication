@@ -27,7 +27,7 @@ Suppose we're calculating $M(3,3,1,2)$. One possible preceding state is $(4,3,2,
 
 The code below does this for every possible matchless deal. I believe (or hope) that it is correct. But unfortunately, even though it is not so brute-force as to enumerate all match-free deals, it is too inefficient to produce an answer in a reasonable runtime. Hey, we're doing mathematics, not engineering? It at least clarifies the functions $P$ and $W$.
 
-FWIW, the expectation seems to be roughly linear to the log of the number of card values in the deck.
+FWIW, the expectation seems to be roughly proportional to the log of the number of card values in the deck. Projecting on that basis, we might expect about 165,718,000 deals before a match-free game with a standard deck. 
 
 ![straightish-line plot with log y-axis](/img/PerfectWar.jpg)
 

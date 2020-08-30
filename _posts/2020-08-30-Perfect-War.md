@@ -28,6 +28,7 @@ Suppose we're calculating $M(3,3,1,2)$. One possible preceding state is $(4,3,2,
 The code below does this for every possible matchless deal. I believe (or hope) that it is correct. But unfortunately it is too inefficient to produce an answer in a reasonable runtime. I include it as a clarification of the functions $P$ and $W$.
 
 ```python
+from math import factorial
 
 # Return number of ways to deal matchlessly from a state [a,b,c,d] where
 # among remaining cards are a,b,c,d card values with 1,2,3,4 cards to
@@ -59,7 +60,8 @@ def matchlessDealsFrom (state):
 			totalWaysHere += waysHere * matchlessDealsFrom(newState)
 	return totalWaysHere
 
-print(matchlessDealsFrom([0,0,0,13]))
+for n in range(2,14):
+	print(n,",",factorial(4*n)/matchlessDealsFrom([0,0,0,n]))
 ```
 
 <br>
